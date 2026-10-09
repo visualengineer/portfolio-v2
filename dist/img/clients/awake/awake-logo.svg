@@ -1,0 +1,87 @@
+
+
+
+
+
+
+
+
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920 1080">
+  <defs>
+        <style>
+        .bg {
+            animation-name: bgChange;
+            animation-duration: 30s; 
+            /* animation-timing-function: ease-in-out;*/
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes bgChange {
+            0%, 20%, 50%, 70%, 100% {
+                fill: #FFF;
+            }
+            25%, 45%, 75%, 95% {
+                fill: #2C2626;
+            }
+        }
+
+        @keyframes awakeChange {
+            0%, 20%, 50%, 70%, 100% {
+                 fill: #000;
+                 opacity: 1;
+            }
+            25%, 45%, 75%, 95%  {
+                fill: #fff;
+                opacity: 1;
+            }
+
+        }
+
+          .awake-text {
+            fill: #26ee2b;
+            animation-name: awakeChange;
+            animation-duration: 30s; 
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: infinite;
+        }
+
+
+        /*svg g { opacity: 0; } .bg { opacity: 0.5; }*/
+
+        @media screen and (max-width: 7000px) {
+        .logo  {transform: translate(-3%, 0%);}
+        }
+
+        @media screen and (max-width: 1024px) {
+        .logo  { transform: scale(1.25) translate(-10%, -8%);}
+        }
+        @media screen and (max-width: 768px) {
+        .logo  {transform: scale(1.35) translate(-14.5%, -10%);}
+        /*.bg {transform: scaleY(2) !important;}*/
+        }
+
+        </style>
+
+
+
+
+  </defs>
+  <path data-name="Rectangle 11874" class="bg" fill="#fff" d="M0 0h1920v1080H0z"/>
+  <g data-name="Group 17657" class="logo">
+    <linearGradient id="a" x1="0.33" y1="1.032" x2="0.98" y2="-0.999" gradientUnits="objectBoundingBox">
+      <stop offset="0.001" stop-color="#d76f78"/>
+      <stop offset="1" stop-color="#ffd4a8"/>
+    </linearGradient>
+    <linearGradient id="b" x1="0.929" y1="0.601" x2="0.106" y2="0.407" xlink:href="#a"/>
+    <g data-name="Group 17656" class="awake-text">
+      <g data-name="Group 24">
+        <g data-name="Group 7">
+          <path data-name="Path 3" d="m876.484 443.268-38.338 87.154h18.74c1.972-4.686 4.825-10.858 6.9-15.779h32.917l7.027 15.779h18.856l-38.828-87.154Zm-5.176 54.237 8.873-19.971 8.88 19.971Zm201.179-53.637c-5.174 16.286-10.6 33.9-15.9 50.293l-22.191-50.893h-7.027l-22.064 50.908-15.906-50.045h-17.872l27.367 87.154h8.878l23.174-53.032 23.048 53.007h8.873l27.493-87.392Zm106.016-.6-38.339 87.154h18.735c1.972-4.686 4.827-10.858 6.907-15.779h32.909l7.031 15.779h18.861l-38.83-87.154Zm-5.182 54.237 8.88-19.971 8.873 19.971Zm185.653-53.374h-23.054l-29.339 32.667v-32.667h-17.015v86.291h17.015v-27.747c1.725-1.725 3.45-3.824 4.928-5.549l27.613 33.3h22.324l-38.47-45.986Zm121.42 17.137v-17.137h-55.493v86.291h55.493v-17.138h-38.337v-17.377h27.956v-17.263h-27.956v-17.376Z"/>
+        </g>
+      </g>
+      <path data-name="Path 7" d="M922.43 682.29H846.7L947.261 442.5h75.483Z" transform="translate(-406.7 -69.5)" fill="url(#a)"/>
+      <path data-name="Path 8" d="M931.5 442.5h75.482l100.562 239.79h-75.73L931.5 442.5Z" transform="translate(-390.95 -69.5)" fill="url(#b)"/>
+    </g>
+  </g>
+</svg>

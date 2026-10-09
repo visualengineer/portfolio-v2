@@ -1,0 +1,31 @@
+{
+  "name": "jamesgarnham",
+  "version": "1.0.0",
+  "description": "my portfolio",
+  "main": "index.js",
+  "scripts": {
+    "start": "sass --watch scss:dist/css --style=compressed --no-source-map",
+    "terser": "terser dist/js/main.js -o dist/js/main.min.js -c -m & terser dist/js/glide.min.js -o dist/js/glide.min.js -c -m & terser dist/js/vue_referral.js -o dist/js/vue_referral.min.js -c -m",
+    "post": "postcss dist/css/common-layout.css -u autoprefixer -o dist/css/common-layout-post.css",
+    "uglify": "uglifyjs dist/js/main.js -c -m",
+    "pure": "purifycss dist/css/common-layout.css dist/index.html  --info --out dist/css/common-layout-pure.css",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "development": "parcel index.html",
+    "production": "parcel build dist/index.html"
+  },
+  "author": "JG",
+  "license": "ISC",
+  "dependencies": {
+    "autoprefixer": "^10.0.0",
+    "browserstack-local": "^1.4.5",
+    "sass": "^1.26.5",
+    "terser": "^5.15.1",
+    "uglify-js": "^3.10.4"
+  },  
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5",
+    "postcss": "^8.0.9",
+    "postcss-cli": "^8.0.0",
+    "purify-css": "^1.2.5"
+  }
+}

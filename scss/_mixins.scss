@@ -1,0 +1,151 @@
+$mi: 0.5rem;
+$sm: 0.75rem;
+$mes: 1.1rem;
+$me: 1.3rem;
+$mel: 1.5rem;
+$mexl: 2rem;
+$la: 3.3rem;
+
+$hover-timing: 0.5s;
+
+@function url-friendly-colour($colour) {
+  @return '%23' + str-slice('#{$colour}', 2, -1);
+}
+
+@mixin goUp {
+  transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  transform: translateY(-100px);
+}
+
+@mixin goDown {
+  transition: all 0.5s ease-out;
+  -webkit-transition: all 0.5s ease-out;
+  transform: translateY();
+}
+
+@mixin easeOut {
+  transition: all 0.5s ease-out;
+  -webkit-transition: all 0.5s ease-out;
+  //transform: translateX(100%);
+}
+@mixin easeOutMore {
+  transition: all 1s ease-out;
+}
+@mixin outLine {
+  outline: 1px dotted #ddd7be;
+}
+
+@mixin slide {
+  transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  //transform: translateX(0, 100%);
+  //transform: translate(0, 90%);
+}
+@mixin shadow {
+  box-shadow: 3px 3px 6px -2px rgba(0, 0, 0, 0.36);
+}
+
+@mixin respond($breakpoint) {
+  // $breakpoint is simply a variable that can have several values
+  // min-width = mobile-first, max-width = desktop first
+  @if $breakpoint==touch {
+    @media (hover: none) and (pointer: coarse) {
+      @content;
+    }
+  }
+  @if $breakpoint==319 {
+    @media only screen and (min-width: 319px) {
+      @content;
+    }
+  }
+  @if $breakpoint==400 {
+    //added Nov 17th 2020 for line break on homepage intro
+    @media only screen and (min-width: 400px) {
+      @content;
+    }
+  }
+  @if $breakpoint==405 {
+    @media only screen and (max-width: 405px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint==500 {
+    @media only screen and (min-width: 500px) {
+      @content;
+    }
+  }
+  @if $breakpoint==666 {
+    @media only screen and (min-width: 666px) {
+      @content;
+    }
+  }
+  @if $breakpoint==768 {
+    @media only screen and (min-width: 768px) {
+      @content;
+    }
+  }
+  @if $breakpoint==1000 {
+    @media only screen and (min-width: 1000px) {
+      @content;
+    }
+  }
+  @if $breakpoint==1200 {
+    @media only screen and (min-width: 1200px) {
+      @content;
+    }
+  }
+  @if $breakpoint==1300 {
+    @media only screen and (min-width: 1300px) {
+      @content;
+    }
+  }
+  @if $breakpoint==1400 {
+    @media only screen and (min-width: 1400px) {
+      @content;
+    }
+  }
+  @if $breakpoint==1500 {
+    @media only screen and (min-width: 1500px) {
+      @content;
+    }
+  }
+  @if $breakpoint==1600 {
+    @media only screen and (min-width: 1600px) {
+      @content;
+    }
+  }
+  @if $breakpoint==1666 {
+    @media only screen and (min-width: 1666px) {
+      @content;
+    }
+  }
+  @if $breakpoint==1800 {
+    @media only screen and (min-width: 1800px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint==1921 {
+    @media only screen and (min-width: 1921px) {
+      @content;
+    }
+  }
+  @if $breakpoint==2016 {
+    @media only screen and (min-width: 2016px) {
+      @content;
+    }
+  }
+  @if $breakpoint==2400 {
+    @media only screen and (min-width: 2400px) {
+      @content;
+    }
+  }
+  @if $breakpoint==2800 {
+    @media only screen and (min-width: 2800px) {
+      @content;
+    }
+  }
+}

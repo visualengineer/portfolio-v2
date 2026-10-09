@@ -1,0 +1,18 @@
+node_modules/
+_crap
+########
+.DS_Store
+*.DS_Store
+dist/.DS_Store
+dist/_crap
+dist/_htaccess file
+dist/_old
+dist/_old icons
+dist/_video raw
+dist/fonts
+dist/holding
+.vscode
+scss/_crap.scss
+dist/work/flag-beach
+dist/_not-used
+dist/*.md

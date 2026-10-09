@@ -1,0 +1,442 @@
+@use '_colors';
+@use '_mixins' as *;
+@use '_icons';
+
+
+///////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////
+///  A B O U T  +  P R O   B O N O   P A G E S   //////////////////////
+///////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////
+/// 
+.aboutPage,
+.probonoPage {
+  margin: 7rem 1.3rem 0rem 1.3rem;
+
+  @include respond(768) {
+    margin: 7rem 1.05rem 0;
+  }
+  @include respond(1000) {
+    margin: 7rem 1.3rem 0rem 1.3rem;
+  }
+  @include respond(1300) {
+    padding: 2.1rem 2rem 2rem 1.75rem;
+    margin: 7rem 1.3rem 0rem 1.1rem;
+  }
+}
+.wrapper.aboutPage,
+.wrapper.probonoPage { //.wrapper exists in _common-layout.css
+  display: grid;
+}
+
+.wrapper.probonoPage {
+  min-height: calc(100vh - 33.8rem); //added keep footer down
+}
+
+//try FLEXBOX for all this lot!!!!!! ////////////////////
+///////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////
+///  A B O U T   P A G E  /////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////
+.subnav {
+  @include goDown;
+}
+ul.dash {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 1em;
+}
+ul.dash > li:before {
+  display: inline-block;
+  content: '-';
+  width: 1em;
+  margin-left: -1em;
+}
+.dash li {
+  margin-top: 1rem; //added dec 2020 after removing 16px of main li declaration
+}
+.dash a {
+  text-decoration: none;
+  color: var(--text-1);
+  border-bottom: 1px dotted;
+}
+.dash a:hover {
+  color: var(--highlight);
+  border-bottom: 0px dotted;
+}
+
+ul.subnav {
+  @include respond(500) {
+    padding: 0 $mes;
+  }
+  @include respond(1000) {
+    grid-column: 1;
+    position: fixed;
+    padding: 0 $me;
+    width: 30vw;
+  }
+  @include respond(1300) {
+    padding: 0;
+  }
+  @include respond(1500) {
+    padding-left: 0.5rem;
+  }
+  @include respond(1666) {
+    padding-left: 0.75rem;
+  }
+  @include respond(2016) {
+    padding-left: 0;
+    width: 18vw;
+    margin-left: 1.25rem;
+  }
+}
+.subnav li {
+  display: block;
+  padding: 0;
+  margin: 0;
+}
+.subnav li a {
+  display: block;
+  width: auto;
+  border-top: 1px solid var(--bg-5);
+  padding: 1rem 0;
+  margin: 0;
+  transition: color $hover-timing;
+  transition-timing-function: ease-out;
+}
+.subnav li:last-child {
+  border-bottom: 1px solid var(--bg-5); //rgba(var(--text-1), 0.3); //rgba(colors.$text-primary, .3);
+  margin-bottom: $la;
+}
+.subnav li a:hover, .subnav li a:active, .subnav li a:focus {
+  display: block;
+  color: var(--highlight);
+  text-decoration: none;
+  width: auto;
+  padding: 1rem 0;
+  margin: 0;
+  cursor: pointer;
+  background-position: right;
+  list-style-position: inside;
+  //transition: color $hover-timing;
+  //transition-timing-function: ease-in;
+}
+
+// hold text 'live' text colour 
+.subnav li.live a {
+  display: block;
+  color: var(--highlight);
+  text-decoration: none;
+  //border-bottom: 1px solid var(--highlight);
+  //box-shadow: 1px 1px 0px ;
+  //box-shadow: 0px 2px 0px 0px var(--highlight);
+  z-index: 100;
+  width: auto;
+  padding: 1rem 0;
+  margin: 0;
+  cursor: pointer;
+  background-position: right;
+  list-style-position: inside;
+  //transition: color $hover-timing;
+  //transition-timing-function: ease-in;
+}
+
+//this keeps the arrow on 'live' if you want it
+/* 
+.subnav li.link.btn.live a::after {
+  float:right;
+  content: '\00a0';
+  width: 2rem;
+  background-size: 2rem;
+  border: 1px dotted #CCC;
+  background: var(--highlight);
+  mask: var(--arrow-right) right center no-repeat;
+  opacity: 1;
+}
+*/
+
+.subnav li.link a::after, .subnav li.link a:hover::after {
+  float:right;
+  content: '\00a0';
+  width: 2rem;
+  background-size: 2rem;
+  border: 1px dotted #CCC;
+  background: var(--highlight);
+  mask: var(--arrow-right) right center no-repeat;
+  transition: opacity $hover-timing;
+  transition-timing-function: ease-in-out;
+}
+.subnav li.link a::after {
+  opacity: 0;
+  //transition: opacity 0.25s;
+  //transition-timing-function: linear;
+}
+.subnav li.link a:hover::after {
+  opacity: 1;
+  //transition: opacity $hover-timing;
+  //transition-timing-function: ease-in;
+}
+.subnav li.download a:hover, .subnav li.download a:active, .subnav li.download a:focus {
+  display: block;
+  color: var(--highlight);
+  text-decoration: none;
+  width: auto;
+  padding: 1rem 0;
+  margin: 0;
+  background-position: right;
+  list-style-position: inside;
+}
+.pdf {
+  display: inline-block;
+  font-size: 0.7rem;
+  border: 1px solid var(--bg-5);
+  vertical-align: text-top;
+  padding: 0.3rem 0.4rem 0.3rem 0.5rem;
+  margin-top: 0.05rem;
+  margin-left: 5%;
+  border-radius: 3px;
+  text-rendering: geometricPrecision;
+  @include respond(1300) {
+    margin-top: 0.16rem;
+  }
+}
+.subnav li.download a:hover > .pdf {
+  /*do anything with this child*/
+  border: 1px solid  var(--highlight);
+}
+.subnav li.download a::after, .subnav li.download a:hover::after {
+  float:right;
+  content: '\00a0';
+  width: 2rem;
+  background-size: 2rem;
+  border: 1px dotted #CCC;
+  background: var(--highlight);
+  mask: var(--download) right center no-repeat;
+  //transition: opacity $hover-timing;
+  transition: opacity $hover-timing;
+  transition-timing-function: ease-in-out;
+  opacity:0;
+}
+.subnav li.download a::after {
+  //opacity: 0;
+  //transition: opacity 0.25s;
+  //transition-timing-function: linear;
+}
+.subnav li.download a:hover::after {
+  opacity: 1;
+}
+.anchor {
+  padding-top: 120px;
+  margin-top: -120px;
+  @include respond(1300) {
+    padding-top: 9rem;
+    margin-top: -9rem;
+  }
+}
+.phone-no {
+  padding-top: 1rem;
+  border-top: 1px solid var(--bg-5);
+  margin-bottom: 1.2rem;
+  @include respond(1000) {
+    //border: none;
+    padding-top: auto;
+    //margin-bottom: auto;
+  }
+}
+.email-ad {
+  padding-top: 1.2rem;
+  padding-bottom: 1.3rem;
+  border-top: 1px solid var(--bg-5);
+  border-bottom: 1px solid var(--bg-5);
+  margin-bottom: 2rem;
+  @include respond(1000) {
+    //border: none;
+    padding-top: auto;
+    margin-bottom: 1rem;
+  }
+}
+.cv-download {
+  margin: 0 1rem 1rem -0.25rem;
+  display: inline-block;
+  @include respond(666) {
+    margin-bottom: 0;
+  }
+  @include respond(1000) {
+    display:none !important;
+  }
+}
+/////// ABOUT PAGE BUTTONS //////////////////////////
+.about-btn {
+  font-size: 1.3rem !important;
+}
+
+/////// SHOW THESE ON MOBILE ONLY //////////////////////////
+.email-me {
+  display:none !important;
+}
+/////////////////////////////////
+.zoom-chat {
+  @include respond(1000) {
+    margin-left: -0.25rem;
+    //display:none !important; //dunno why this existed - Mar 2024
+  }
+}
+
+.btn-holder {
+  //background-color: red;
+  margin-bottom: 2rem !important;
+  @include respond(500) {
+    //margin-bottom: -1rem !important;
+  }
+  @include respond(1000) {
+    margin-top: 2rem;
+    margin-bottom: 2rem !important;
+  }
+}
+
+
+
+
+.my-location {
+    padding-top: 1.3rem;
+    border-top: 1px solid var(--bg-5); // rgba(colors.$text-primary, .3);
+
+  @include respond(1000) {
+    padding: 1.5rem 0 !important;
+  }
+}
+.my-location, .my-intro, .my-skills, .my-employers {
+  padding-bottom: 1.3rem;
+  border-bottom: 1px solid var(--bg-5); // rgba(colors.$text-primary, .3);
+  margin-bottom: 2rem !important;
+  @include respond(1000) {
+    padding-bottom: 2rem;
+  }
+}
+
+
+@media (min-width: 0px) and (max-width: 1000px) {
+  .probonoPage .subnav,
+  .aboutPage .subnav {
+    //background: green;
+    display: none;
+  }
+}
+//.probonoPage hr:first-of-type {  margin: 0 0 $mi 0;}
+
+
+
+.content {
+  @include respond(319) {
+    padding: 0;
+  }
+  @include respond(500) {
+    padding: 0 $me;
+  }
+  @include respond(1000) {
+    grid-column: 2;
+    padding: 0 $me;
+    width: auto;
+    margin-left: 30vw;
+  }
+  @include respond(1300) {
+    margin-left: 37vw;
+    width:46rem;
+    padding: 0;
+  }
+  @include respond(1500) {
+    margin-left: 24vw;
+    padding-right: 1vw;
+  }
+  @include respond(2016) {
+    margin-right: 20vw;
+  }
+  @include respond(2400) {
+    width:60rem;
+  }
+  @include respond(2800) {
+    //width: 31vw;
+  }
+}
+///////////////////////////////////////////////////////  
+/// ABOUT PAGE IMAGE //////////////////////////////////  
+///////////////////////////////////////////////////////
+    
+.aboutPage figure {
+  margin-bottom: 3rem;
+  margin-left: -1.3rem; //added Mar 2024 to get image full width on mobile
+  margin-right: -1.3rem; //added Mar 2024 to get image full width on mobile
+
+  @include respond(500) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  @include respond(1500) {
+    margin-bottom: 5rem;
+  }
+}
+.aboutPage figcaption {
+  font-size: smaller;
+  padding: 1rem 2rem 1rem 1.3rem; // was padding: 1rem;
+  margin-bottom: 2rem;
+  background: var(--bg-3);
+  background-size: 0.65rem;
+  background-position: 1rem 1.2rem;
+
+  @include respond(500) {
+    padding: 1rem;
+  }
+}
+
+
+
+//////// elements to stop footer running into left nav
+.stopfixed {
+  position: absolute;
+  bottom: 22rem;
+  @include goUp;
+}
+.backdown {
+  @include goDown;
+}
+
+
+section + section {
+  margin-top: 2rem;
+  @include respond(1300) {
+    margin-top: 4rem;
+  }
+}
+
+/////////// lists
+
+
+//// HORIZONTAL LINES ////// dunno if these are used anywhere?
+hr {
+  margin: 2rem 0;
+  height: 1px;
+  background-color: var(--text-1); //colors.$text-primary;;
+  //filter: opacity(0.10);
+  border: 0;
+  @include respond(1500) {
+    margin: 4rem 0;
+  }
+}
+hr.small {
+  margin: 1.5rem 0 1rem 0;
+  height: 1px;
+  background-color: var(--text-1); //colors.$text-primary;;
+  border: 0;
+  @include respond(1500) {
+    margin: 2rem 0;
+  }
+}
+///// END HR //////
+/// 
+
+.pro { //Used on pro bono page to hide nav at smaller sizes
+  @include respond(1000) {
+    display:none;
+  }
+}

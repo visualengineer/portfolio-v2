@@ -1,0 +1,483 @@
+// all below copied from home-test
+
+@use '_colors';
+@import 'mixins';
+
+
+
+
+
+
+/////////////////// START NEW
+
+
+
+
+:root {
+  counter-reset: masonry;
+}
+
+
+/////////////////// END NEW
+
+
+
+
+
+.wrapper {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.masonry-wrapper {
+  max-width: 1920px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 3rem;
+
+  @include respond(500) {
+    margin-right: 7%;
+    margin-left: 7%;
+  }
+  @include respond(666) {
+    margin-right: 10%;
+    margin-left: 10%;
+    text-align: center;
+  }
+  @include respond(768) {
+    margin-right: 5vw;
+    margin-left: 5vw;
+    margin-bottom: 5rem;
+  }
+  @include respond(1000) {
+    margin-right: 4vw;
+    margin-left: 4vw;
+  }
+  @include respond(1200) {
+    margin-right: 3.3vw;
+    margin-left: 3.3vw;
+  }
+  @include respond(2016) {
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 8rem;
+  }
+}
+
+
+/* NEW GRID
+.masonry {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
+  grid-auto-rows: 0;
+}
+*/
+
+.masonry {
+        display: grid;
+        //grid-gap: 10px;
+  //grid-auto-columns: 1fr; // new added
+        grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
+        grid-auto-rows: 0;
+  //grid-template-rows: auto 1fr; // new added
+  //columns: 1;
+  //column-gap: 3.5vw;
+  //transition: all 0.5s ease-in-out;
+  //column-fill: initial;
+  @include respond(768) {
+    grid-template-columns: repeat(2, 1fr);
+    //grid-template-columns: repeat(auto-fill, minmax(auto,1fr));
+    grid-column-gap: 2.5rem;
+    //columns: 2;
+    //column-gap: 2.5rem;
+  }
+  @include respond(1000) {
+    //columns: 2;
+    //column-gap: 2.5rem;
+    //row-gap: 2.5rem;
+  }
+  @include respond(1300) {
+    //columns: 3;
+    //column-gap: 3.2vw;
+  }
+  @include respond(1500) {
+  }
+  @include respond(2016) {
+    //column-gap: 3rem;
+    //text-align: center;
+  }
+}
+
+
+/* NEW GRID
+
+.masonry-item {
+   background-color: #eee;
+   border-radius: 5px;
+   overflow: hidden;
+}
+
+.masonry-item,
+.masonry-item img {
+   position: relative;
+}
+*/
+
+
+.masonry-item {
+      position: relative; //addded new grid element 2024
+  max-width: 580px; //added oct 2022 to cater for images @2x
+  //transition: .5s ease-in-out; //was added in oct 2022
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 1rem;
+      overflow: hidden; //addded new grid element 2024
+  //overflow: visible; /* added for the overlay/hover button/info */
+  @include respond(500) {
+    margin-top: 2.5rem;
+  }
+  @include respond(1500) {
+    margin-top: 3rem;
+  }
+  @include respond(1666) {
+    margin-top: 3.5rem;
+  }
+  @include respond(2016) {
+    margin-top: 4.7rem;
+  }
+}
+
+.masonry-item a {
+  display: block;
+  transition: filter 0.25s ease-in-out; ///////GOOD ///////
+  -webkit-font-smoothing: antialiased; ///////GOOD ///////
+  box-shadow: 3px 3px 6px -2px rgba(0, 0, 0, 0.1);
+  //overflow: hidden; https://stackoverflow.com/questions/39842614/image-in-second-and-third-column-randomly-disappear-on-hover
+  //-webkit-backface-visibility: hidden; /* actual workaround */
+  //backface-visibility: hidden; /* perhaps this is not needed */
+  //width: auto;
+  //border: none;
+  //width: 100%;
+  //height: 100%;
+  //-webkit-backface-visibility: hidden;
+  //-moz-backface-visibility: hidden;
+  //-ms-backface-visibility: hidden;
+  //border: none;
+  //outline: none;
+  @include respond(500) {
+    border-radius: .75rem;
+  }
+}
+
+.masonry-item a:hover {
+  display: block;
+  transition: filter 0.25s ease-in-out; ///////GOOD ///////
+  -webkit-font-smoothing: antialiased; ///////GOOD ///////
+  box-shadow: 3px 3px 6px -2px rgba(0, 0, 0, 0.1);
+
+}
+
+
+/* NEW GRID
+.masonry-item:after {
+  font-weight: bold;
+  background-color: rgba(0, 0, 0, .5);
+  content: counter(masonry);
+  counter-increment: masonry;
+  position: absolute;
+  top: 0;
+  left: 0; 
+  height: 100%;
+  width: 100%;
+  color: white;
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  transition: all .1s ease-in;
+}
+
+.masonry-item:hover:after {
+  font-size: 30px;
+  background-color: rgba(0, 0, 0, .75);
+}
+*/
+
+
+
+
+
+// fix Safari's capacity to animate. Yes, this is from tailwindcss
+.transition-colors {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+
+
+
+@keyframes fadeInNew {
+  0% {
+    opacity: 0;
+    //border-radius: 50%;
+  }
+  100% {
+    //visibility: hidden; //removed this when playing with viddeo play button might break something 5/2/21
+    opacity: 1;
+    //border-radius: 50%;
+  }
+}
+@keyframes fadeOutNew {
+  0% {
+    opacity: 1;
+    //border-radius: 50%;
+  }
+  100% {
+    //visibility: hidden; //removed this when playing with viddeo play button might break something 5/2/21
+    opacity: 0;
+    //border-radius: 50%;
+  }
+}
+
+.masonry-item a:after {
+  transition: opacity 0.5s;
+  //animation: 0.5s fadeOutNew ease-in forwards;
+  transition-timing-function: cubic-bezier(0,.97,1,.99);
+  opacity:0;
+}
+
+.masonry-item a:hover:after {
+    transition: opacity 0.2s;
+    transition-delay: 0.1s;
+    //animation: .75s fadeInNew ease-out forwards;
+    transition-timing-function: cubic-bezier(.78,.22,1,.99);
+    opacity:1;
+} 
+/*
+.masonry-item a:after {
+  animation: 0.5s fadeOutNew forwards;
+  opacity:1;
+}
+
+.masonry-item a:hover:after {
+    animation: .75s fadeInNew forwards;
+} 
+*/
+
+.masonry-item a:after, .masonry-item a:hover:after {
+  content:url('../img/icons/roll-arrow-2.svg');
+  transform: scale(0.75);
+    top: 0;
+    left: 0;
+    width:100%;
+    height:calc(100% - 2.25rem);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    //background: url('data:image/svg+xml,<svg width="209" height="209" viewBox="0 0 209 209" fill="none" xmlns="http://www.w3.org/2000/svg"><circle opacity="0.77" cx="104.5" cy="104.5" r="104.5" fill="#2C06FF"/><path d="M98.7838 63L138.316 102.532C139.561 103.778 139.561 105.645 138.316 106.89L98.7838 146.423M138.979 104.699L53.9994 104.699" stroke="#EFEFEF" stroke-width="6.22557" stroke-miterlimit="10"/></svg>') no-repeat 0px 0px;
+    //background: rgba(colors.$text-highlight, .4);
+    position:absolute;
+    margin: auto;
+} 
+
+.masonry-item a,
+.masonry-content {
+  //border-radius: 4px;
+  //width: 100%;
+  //height: 100%;
+  overflow: hidden;
+  //border: none;
+  //-webkit-transform-style: preserve-3d;
+  //-webkit-backface-visibility: hidden;
+  //border: none;
+  //width: 100%;
+  //height: 100%;
+
+  // the three lines below stop a bit of jump but break 2 cols on ipad
+  //-webkit-backface-visibility: hidden; //fixes chrome ani jump bug
+  //-webkit-transform: translateZ(0) scale(1, 1); //fixes chrome ani jump bug
+  //transform: translateZ(0); //fixes chrome ani jump bug
+
+  //outline: 1px solid #fff;
+}
+.masonry-item {
+  @include respond(1500) {
+    //filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.3)); ///////GOOD ///////
+  }
+
+  //position: relative;
+  //-webkit-backface-visibility: hidden; // add to fix webkit bug jitter
+  //-webkit-transform: perspective(1000px); // add to fix webkit bug jitter - also stops img dissapearing on ipad
+  //outline: 1px solid #fff;
+  //width: auto;
+  //height: auto;
+}
+.masonry-item:hover {
+  //overflow: hidden;
+  //border: 1px solid #fff;
+  //width: 100%;
+  //height: 100%;
+  //overflow: hidden;
+  //width: auto;
+  //height: auto;
+  @include respond(1300) {
+    //filter: drop-shadow(0px 5px 5px rgba(0, 0, 0, 0.3)); ////// This is causing the images to dissapear
+    //filter: drop-shadow(3px 3px 6px -2px rgba(0, 0, 0, 0.36)); ////// This is causing the images to dissapear
+    //box-shadow: 3px 3px 6px -2px rgba(0, 0, 0, 0.36);
+  }
+
+  //width: 100% !important;
+  //width: 99%;
+  //border: 1px solid #fff;
+}
+
+// height on container auto? fixed????!?!?
+.masonry-item img {
+      position: relative; //addded new grid element
+  @include respond(1300) {
+    transition: transform 0.5s ease;
+  }
+
+  //@include easeOut;
+  //width: auto;
+  //width: 100% !important;
+
+  //-webkit-font-smoothing: antialiased;
+  //filter: brightness(90%);
+  //-moz-transform: scale(1); this and three below were from here: https://stackoverflow.com/questions/39842614/image-in-second-and-third-column-randomly-disappear-on-hover
+  //-webkit-transform: scale(1);
+  //transform: scale(1);
+}
+/*
+@media (min-width: 1023px) and (max-width: 1024px) {
+  .masonry-item img {
+    width: 456px;
+  }
+}
+*/
+
+.masonry-item:hover img {
+  @include respond(1300) {
+    transform: scale(1.1); ///////GOOD ///////
+    backface-visibility: hidden; /* Remove Image flickering on hover */ ///////GOOD ///////
+  }
+
+  //border: 1px solid rgba(255, 255, 255, 0);
+  //filter: brightness(100%);
+}
+
+/*
+  .masonry-footer {
+    font-size: 0.75em;
+    opacity: 0.25;
+    text-align: center;
+    padding-top: 3em;
+    padding-bottom: 3em;
+    margin-bottom: -1.5em;
+    transition: opacity 1s ease-in-out;
+  }
+  .masonry-footer a {
+    color: currentColor;
+  }
+  .masonry-footer:hover,
+  .masonry-footer:active,
+  .masonry-footer:focus {
+    opacity: 0.75;
+  }
+  */
+
+.info {
+  padding: 0.5rem 0 1rem 1.4rem;
+  display: inline-block;
+  margin-top: 0.5rem !important;
+  font-size: 0.9rem;
+  text-align: center;
+  letter-spacing: 0.02;
+  //font-family:"SFMono-Regular",Consolas,"Liberation Mono",Menlo,Courier,monospace;
+
+  @include respond(500) {
+    padding: 0.5rem 0 0 0;
+  }
+  @include respond(1300) {
+    font-size: 0.8rem;
+  }
+  @include respond(2016) {
+    //float: left;
+  }
+}
+
+@media (hover: none) {
+  .info::before {
+    content: '\2191\0020';
+  }
+}
+
+
+.quotemark {
+  transform: rotate(180deg);
+  bottom: 0px;
+  top:2px;
+  left: 4px;
+  height: 16px;
+  //line-height: 0.1rem;
+  //right: 0;
+  width: 14px;
+  margin-right: 0.25rem;
+  background-color: var(--text-1);
+  mask: var(--quote) no-repeat 0px 1px;
+  //background: url('../img/icons/quote.svg') no-repeat 0px 1px;
+  //background-color: rgba(44,6,255,0.4);
+  //colors.$text-primary;
+  background-size: 90%;
+  // /border-radius: 50%;
+  position: relative;
+  display: inline-block;
+  //padding: 2px 6px 0;
+  text-align: center;
+  //transform: translateX(0px);
+  //transition: 1s all;
+  //outline: 1px dotted #FFCC00;
+  //vertical-align: middle;
+  //z-index: 9999;
+  @include respond(1300) {
+    background-size: 82%;
+    mask: var(--quote) no-repeat 0px 0px;
+  }
+}
+
+
+
+///////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////
+///   L O G O   S T R I P     /////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////
+.logo-strip {
+  margin-top: 4rem;
+  background: #000;
+  text-align: center;
+  @include respond(1000) {
+    margin-top: 10rem;
+  }
+}
+.logo-strip img {
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 3rem;
+  @include respond(768) {
+    width:400px;
+  }
+  @include respond(1000) {
+    width:480px;
+    padding-bottom: 2rem;
+  }
+}
+.logo-strip h2 {
+  color: #fff;
+  padding: 4rem 0 0;
+  @include respond(1000) {
+    padding: 6rem 0 0;
+  }
+}
+

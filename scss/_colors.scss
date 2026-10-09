@@ -1,0 +1,169 @@
+@function hexToRGB($hex) {
+  @return red($hex), green($hex), blue($hex);
+}
+
+.theme-light {
+  --text-1:#595454;//#595454;     //  --font-color
+  --text-2:#c9c1c1;
+  --highlight:#1000DC; 
+  --highlight-2:#FFFF00; 
+  --highlight-3:#FF7109; 
+  --bg-1:#EFEFEF;       // --color-primary
+  --bg-2:#EEEBEB;
+  --bg-3:#E6E5E5;      // --color-panel
+  --bg-4: ＃E4E1E1;
+  --bg-5: #D9D6D6;
+  --lighter: #F5F5F5;
+}
+.theme-dark {
+  --text-1:#CCCCCC;
+  --text-2:#999;
+  --highlight:#FFFF00; //#1202fb;
+  --highlight-2:#FFFF00 //#FF7109; 
+  --highlight-3:#FF7109; 
+  --bg-1:#181818;       // --color-primary
+  --bg-2:#1Е1Е1E;
+  --bg-3:#121212;      // --color-panel
+  --bg-4:#OFOFOF;
+  --bg-5: #303030;
+  --lighter: #272727; //XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+} // goes in html tag on index page class="theme-light" //head of index page:
+
+
+
+
+
+
+.theme-blue {
+  --text-1:#FFFFFF;
+  --text-2:#000000;
+  --highlight:#FFFF00;
+  --highlight-2:#FFFF00 //#FF7109; 
+  --highlight-3:#FFFF00; 
+  --bg-1:#2C06FF;       // --color-primary
+  --bg-2:#3914FF;
+  --bg-3:#270EF6;
+  --bg-4: #1000DC;      // --color-panel
+  --bg-5: #0B00CA;
+  --lighter: #030038; 
+}
+$signoff-bg: #f3f1ff;
+$signoff-text: #4d4d4d;
+$signoff-line: #dad3ff;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//$text-primary: #595454; //#fff;
+//$text-highlight:#2c06ff; // #4B4545; // rgb(255, 255, 0);
+//Blues
+//$blue-primary: #EFEFEF; //#2c06ff //rgba(44, 6, 255, 1)
+//$less-blue: #275efe;
+//$blue-accent:#d7d2d2; //#2c06ff; // --color-accent-rgb
+//$blue-panel:#E6E5E5;// #1000dc; //#2b06ee;
+//$blue-darker: #E6E5E5; //#2603d6; // --color-darker
+//$blue-darkest: #1102be; // used only on flags table
+//$highlight: rgb(255, 255, 0);
+//darker blue for quad and slider backs: #2603d6
+
+//Blacks
+//$black-primary: #181818;
+//$black-highlight: rgb(255, 255, 0);
+//$less-black: #275efe;
+//$black-accent: #222;
+//$black-panel: #000;
+//$black-darker: #111;
+//$black-text: #CCC;
+
+//forms
+//$field-fill: #E6E5E5; //#3915ff;
+//$field-border: #D7D2D2; // #5e41fd;
+//
+
+//::-moz-selection {  background: #275efe; } //to be checked
+//::selection {  background: #275efe;  opacity: 1;} //to be checked
+
+.theme-light-old {
+  //--color-primary: #{$blue-primary};
+    //--color-primary-rgb: #{hexToRGB($blue-primary)};
+    //--color-primary: // #2c06ff;
+  //--color-secondary: #12093f;
+    //--color-accent: #2c06ff; //#2b06ee; //rgba(43, 6, 238, 0.9) //new rgba(44, 6, 255, 0.68); //rgba(43, 6, 238, 1); //
+  //--color-accent: #{$blue-accent};
+  //--color-accent-rgb: #{hexToRGB($blue-accent)};
+    //
+  //--font-color: #{$text-primary};
+    //
+  //--color-panel: #{$blue-panel};
+    //--color-panel-rgb: #{hexToRGB($blue-panel)};
+  //--color-darker: #{$blue-darker};
+  //--color-darker-new: #{#2804f5};
+  //--lighter: #{$field-fill};
+}
+.theme-dark-old {
+  //--color-primary: #{$black-primary};
+    //--color-primary-rgb: #{hexToRGB($black-primary)};
+    //--color-primary: #111222;
+  //--color-secondary: #010101;
+    //--color-accent: rgba(17, 17, 17, 0.68);
+  //--color-accent: #{$black-accent};
+  //--color-accent-rgb: #{hexToRGB($black-accent)};
+    //
+  //--font-color: #{$black-text};
+    //
+  //--color-panel: #{$black-panel};
+    //--color-panel-rgb: #{hexToRGB($black-panel)};
+  //--color-darker: #{$black-darker};
+  //--color-darker-new: #{$black-darker};
+  //--lighter: #{#030303};
+}
+
+/*
+.theme-new {
+--text-primary:#595454;
+--text-secondary:#000000;
+--text-highlight:#2c06ff;
+--bg-primary:#EFEFEF;
+--bg-secondary:#d7d2d2;
+
+--bg-tertiary:#000000;
+--button-bg:#000000;
+--button-text:#000000;
+--field-text:#000000;
+--field-placeholder:#000000;
+--borders:#000000;
+}
+*/
+//$color-primary: #16498a;
+
+//:root {
+//  --color-primary: #{$color-primary};
+//  --color-primary--rgb: #{hexToRGB($color-primary)};
+//}
+
+//color: rgba(var(--color-primary--rgb), 0.4);
+

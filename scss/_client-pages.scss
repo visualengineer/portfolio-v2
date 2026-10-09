@@ -1,0 +1,1071 @@
+@use '_colors';
+@use '_mixins' as *;
+@use '_typography' as *;
+
+// UXUI - .ux | naming – .na | brand – .br | print – .pr | photography – .po | naming – .n | strategy – .st | guidelines – .gu |
+
+.announce {
+  background-color: var(--highlight-2); // colors.$highlight;
+  //background-color: #FF7109;
+  padding: 1.5rem 2rem;
+  color: #000000;
+  font-size: 1.2rem;
+  border-radius: 0.5rem;
+}
+
+//.work-item .wrapper {  background: darken($background-primary, 5%);}
+.work-item .wrapper {
+  margin: 0 auto;
+  padding: 0;
+  max-width: 1920px;
+  //background: darken($background-primary, 20%), 80, 0;
+  //
+  // @include respond(1500) {
+  // background: linear-gradient(180deg, $background-primary 34rem, #092a3b 34rem);
+  //}
+}
+.hero-img {
+  position: relative; /* added for the overlay/hover button/info */
+  width: auto;
+  overflow: hidden; /* added for the overlay/hover button/info */
+  //margin-bottom: 2rem;//////////////////////////
+  //margin: auto;
+  //padding: 0;
+  //@include: #0000cc;
+  @include respond(1500) {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    //background-color: red;
+  }
+}
+
+.hero-img img {
+  margin: auto;
+  //width: 100%;
+  //background-color: red;
+}
+
+.hero-text {
+  //width: 90vw;
+  margin: 7rem auto 0 auto;
+  padding: 0 1.3rem;
+  //background-color: red;
+  @include respond(500) {
+    font-size: 75%; //needs checking
+    padding: 0 2.45rem;
+    //background-color: red;
+  }
+  @include respond(1000) {
+    //width: 90vw;
+    font-size: 100%;
+    padding: 0 2.5rem;
+    margin-right: 15vw;
+    margin-bottom: 5vw;
+    //margin: 18vh 18vw 5vw 18vw;
+  }
+  @include respond(1300) {
+    //width: 90vw;
+    margin: 10rem 10rem 4rem 0.5rem;
+  }
+  @include respond(1500) {
+    //background-color: red;
+    margin: 18vh 14vw 5vw 14vw;
+  }
+  @include respond(2016) {
+    //margin: 0 20vw;
+    margin: 9.5vh auto 0 auto; //top was 14vh 25/11/20
+    max-width: 1920px;
+    padding: 10rem 22rem 1rem 22rem;
+    //background-color: darken($background-primary, 5%);
+    background: var(--bg-3);
+  }
+}
+
+//if image appears first give hero-image the hero-text attributes
+.wrapper > .hero-img:first-child {
+  margin: 7rem auto 0 auto;
+  //padding: 0 1.3rem;
+  //background-color: red;
+  @include respond(500) {
+    //padding: 0 2.5rem;
+    //background-color: red;
+  }
+  @include respond(1000) {
+    //width: 90vw;
+    //margin-right: 15vw;
+    margin-bottom: 5vw;
+    margin-top: 5rem; // added 25th Nov to correct ipad landscape view with nav
+    //margin: 18vh 18vw 5vw 18vw;
+  }
+  @include respond(1300) {
+    //width: 90vw;
+    margin: 10rem 0 4rem 0;
+  }
+  @include respond(1500) {
+    //background-color: red;
+    margin: 18vh 0 5vw 0;
+  }
+  @include respond(2016) {
+    //margin: 0 20vw;
+    margin: 14vh auto 0 auto;
+    max-width: 1920px;
+    padding: 0;
+    //background-color: darken($background-primary, 5%);
+    background: var(--bg-3);
+  }
+}
+
+//if hero-text appears second give hero-text, hero-image attributes
+.hero-img + .hero-text {
+  margin-top: 3vh;
+  @include respond(666) {
+    margin-top: 4vh;
+  }
+  @include respond(1000) {
+    margin-top: 0;
+  }
+}
+
+.tags {
+  //background: red;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  @include respond(1500) {
+    margin-bottom: 4rem;
+  }
+}
+
+.color-wrap {
+  //this variable is declared in the html page
+  background-color: var(--color-darker);
+  margin-top: 2rem;
+  //width: 100%;
+  //display: flex;
+  //justify-content: center;
+  //align-items: center;
+  //margin-left: 20px;
+  @include respond(500) {
+    //padding: 0 2.2rem; //changed 16th Nov for 556px wide footer opininon element on projects
+    padding: 1rem 0.75rem; //added 1rem top and bottom 16th Nove for opinion sign off
+    margin-top: 0;
+  }
+  @include respond(768) {
+    padding: 3rem 2.5rem;
+  }
+  @include respond(1000) {
+    padding: 0 2.5rem;
+  }
+  @include respond(1300) {
+    padding: 0 3rem;
+  }
+  @include respond(1500) {
+    padding: 0 3.7rem;
+  }
+  @include respond(1666) {
+    padding: 0 4.4rem;
+  }
+  @include respond(1921) {
+    //padding: 0 10rem;
+    //background-color: red;
+  }
+}
+
+//remove top space @ 360px wide
+.work-nav + .color-wrap {
+  margin-top: 0;
+}
+
+// this is something to do with the slider
+// #options-gap-input {  width: 100px;}
+/*
+.color-wrap + .panel-text {
+  background: red !important;
+}
+*/
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+/* /////////////////////////////////// I M P O R T   S L I D E R  ////////////////////////////////////// */
+@import '_slider';
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+.fade {
+  transition: opacity 0.5s ease;
+}
+
+
+///////////////////////////////////////////////////// S T A T I C  I T E M S ///////////////////////////////////////
+.static-trio {
+  //background: darken($background-primary, 5%);
+  display: grid;
+  //scroll to show two and one in a carousel
+  grid-template-rows: minmax(auto);
+  grid-template-columns: minmax(auto);
+  max-width: 1920px;
+  width: auto;
+  margin: 0;
+  padding: 0;
+
+  @include respond(666) {
+    //show one, two hidden in carousel
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: minmax(auto);
+    gap: 0 3%;
+  }
+
+  @include respond(1000) {
+    //scroll to show two and one in a carousel
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: minmax(auto);
+    //gap: 0 3%;
+    //grid-template-areas: '. . .' '. . .' '. . .';
+    //grid-template-columns: 580px 580px 580px;
+    //grid-template-columns: minmax(0, 3fr);
+    //grid-template-rows: minmax(0, 3fr);
+    //width: auto;
+    //margin: 0 auto;
+    padding: 6vh 0 1vw; //changed from padding: 6vh 0 5vw; 9-9-20
+  }
+  @include respond(1400) {
+    gap: 0 2.5%;
+  }
+  @include respond(1500) {
+    //gap: 1.8% 5%; //removed Mar 2021 to stop multiple full-col-width x 3 falling out of box
+  }
+}
+
+.logos .static-trio {
+  //background-color: brown;
+
+  @include respond(500) {
+    margin: 7.2vw; // Oct 2020 to keep space from reflowed .static-trio
+  }
+  @include respond(666) {
+    margin: 1.55rem; // Oct 2020 to keep space from reflowed .static-trio
+  }
+  @include respond(1000) {
+    margin: 0; // Oct 2020 to keep space from reflowed .static-trio
+  }
+  @include respond(1500) {
+    padding-bottom: 15%; // Oct 2020 to keep space from reflowed .static-trio
+  }
+  @include respond(2016) {
+    margin: 0 1.5rem; //added 16th Nov
+  }
+}
+
+.static-trio + .static-trio {
+  @include respond(1000) {
+    padding: 0 0 1vw;
+  }
+  @include respond(1500) {
+    padding: 2.5vh 0 1vw;
+  }
+}
+
+////////////// S T A T I C  -  T W O / O N E    C O L U M N   L A Y O U T  //////
+.static-trio > div {
+  //declare styles
+  //margin: 2rem 0;
+  //background-color: black;
+  //padding: 0 1.3rem; //deleted Nov 16th for full screen logos on mobile
+  margin-bottom: 2rem;
+  position: relative; /* added for the overlay/hover button/info */
+  overflow: hidden; /* added for the overlay/hover button/info */
+  //background-color: brown;
+  //grid-column: 1 / 3;
+  @include respond(500) {
+    padding: 0;
+    //background-color: green;
+  }
+  @include respond(666) {
+    //margin: 2rem;
+    //background-color: green;
+  }
+  @include respond(768) {
+    padding: 0;
+    margin-bottom: 1.5rem;
+    //background-color: red;
+  }
+  @include respond(1000) {
+    margin-bottom: 2rem;
+  }
+  @include respond(1500) {
+    margin-bottom: 2.5rem;
+  }
+}
+/*
+.static-trio > .col-full-wdith > img {
+  //margin: 0 !important;
+  border: 10px solid #000 !important;
+}
+
+.col-full-wdith img {
+  box-shadow: none !important;
+}
+*/
+.static-trio > .col-full-wdith img {
+  margin: 0;
+  @include respond(1200) {
+    margin: 10px;
+  }
+}
+
+.static-trio > .col-full-wdith video {
+  border-radius: 0.7rem;
+  box-shadow: 7px 7px 30px #D9C9CA;
+  text-align: center;
+  margin: 0 auto 2rem;
+}
+
+
+
+.shadow-none {
+  box-shadow: none !important;
+  //margin: 0;
+  //border: 10px solid #000 !important;
+}
+
+.col-full-wdith {
+  grid-column: 1/-1;
+  justify-self: center; //added 13th Nov for prominet app map
+}
+
+//
+////////////// T W O  C O L  V S  O N E  C O L //////
+/*
+.parent {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+grid-template-rows: repeat(3, 1fr);
+grid-column-gap: 0px;
+grid-row-gap: 0px;
+}
+*/
+
+.two-col-left,
+.two-col-right {
+  display: grid;
+  @include respond(1300) {
+    //background: yellow;
+    grid-template-columns: repeat(3, 1fr);
+    //padding-left: $la;
+  }
+}
+
+////////////// T W O  C O L  L E F T - I M G / T X T /////////////////
+.two-col-left {
+  background: var(--bg-3);
+  @include respond(1000) {
+    padding: 3rem 0;
+  }
+  @include respond(1300) {
+    padding: 5rem 0 3rem 0;
+  }
+}
+//image
+.two-col-left div:nth-child(1) {
+  margin: 2rem 0 2rem 0;
+  background-color: yellow; //??????
+  @include respond(768) {
+    margin-top: 3rem;
+  }
+  @include respond(1000) {
+    margin: 1rem $mel * 1.75 3rem;
+  }
+  @include respond(1300) {
+    grid-column: span 2;
+    margin-top: 0;
+    margin-left: $la;
+  }
+  @include respond(1500) {
+    margin-left: $la * 1.1;
+    //background-color: yellow;
+  }
+  @include respond(1666) {
+    margin-left: $la * 1.35;
+  }
+}
+//text
+.two-col-left div:nth-child(2) {
+  margin: $me;
+  //outline: 1px dotted #333;
+  @include respond(500) {
+    margin: $mel * 1.5;
+  }
+  @include respond(768) {
+    margin: 2.2rem;
+  }
+  @include respond(1000) {
+    margin-left: $mel * 1.75;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  @include respond(1300) {
+    margin: 0 $la 0 0;
+  }
+  @include respond(1500) {
+    margin: 0 $la * 1.1 0 0;
+  }
+  @include respond(1666) {
+    margin: 0 $la * 1.35 0 0;
+  }
+  @include respond(1921) {
+    margin: 0 $la * 1.35 0 $mexl;
+  }
+}
+//split paras
+.two-col-left div:nth-child(2) p {
+  @include respond(768) {
+    columns: 2; //make the text go to top
+    column-gap: 2rem;
+    column-fill: balance;
+  }
+  @include respond(1300) {
+    columns: 1;
+  }
+}
+
+////////////// T W O  C O L  R I G H T - T X T / I M G /////////////////
+.two-col-right {
+  background: var(--color-secondary);
+  box-shadow: inset 4px 4px 15px 0px #000000;
+  padding: 2.45rem 0;
+  @include respond(1000) {
+    padding-bottom: 3.5rem;
+  }
+  @include respond(1300) {
+    padding: 5rem 0 3rem 0;
+  }
+}
+//text
+.two-col-right div:nth-child(1) {
+  margin: $me;
+  //background-color: brown;
+  @include respond(500) {
+    margin: $mel * 1.5;
+  }
+  @include respond(768) {
+    margin: 2.2rem;
+  }
+  @include respond(1000) {
+    margin-left: $mel * 1.75;
+    margin-bottom: 1rem;
+  }
+  @include respond(1300) {
+    margin: 0 0 0 $la;
+    columns: 1;
+  }
+  @include respond(1500) {
+    margin-left: $la * 1.1;
+    //background-color: yellow;
+  }
+  @include respond(1666) {
+    margin-left: $la * 1.35;
+  }
+  @include respond(1921) {
+    margin: 0 $mexl 0 $la * 1.35;
+  }
+}
+//split paras
+.two-col-right div:nth-child(1) p {
+  @include respond(768) {
+    columns: 2; //make the text go to top
+    column-gap: 2rem;
+    column-fill: balance;
+  }
+  @include respond(1300) {
+    columns: 1;
+  }
+}
+
+//image
+.two-col-right div:nth-child(2) {
+  background-color: red;
+  @include respond(1000) {
+    margin: 0 $mel * 1.75 2rem;
+  }
+  @include respond(1300) {
+    grid-column: span 2;
+    margin-right: $la;
+  }
+  @include respond(1500) {
+    margin-right: $la * 1.1;
+  }
+  @include respond(1666) {
+    margin-right: $la * 1.35;
+  }
+}
+
+///////////////////////////////////
+
+////////////// S T A T I C  -  F O U R   C O L U M N   L A Y O U T  //////
+.static-quad {
+  //background: darken($background-primary, 5%);
+  display: grid;
+  //scroll to show two and one in a carousel
+  grid-template-rows: minmax(auto);
+  grid-template-columns: minmax(auto);
+  max-width: 1920px;
+  width: auto;
+  margin: 0;
+  padding: 6.5vh 0 4.5vh; //edited from 6vh 0 5vw on Nov 11th 2020
+
+  @include respond(666) {
+    //show one, two hidden in carousel
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: minmax(auto);
+    gap: 2% 0; //taken out nov 16th to get margins right on 768px wide - was 2% 3%
+    //padding: 6vh 0 5vw;
+  }
+
+  @include respond(1000) {
+    //scroll to show two and one in a carousel
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: minmax(auto);
+    //gap: 0 3%;
+    //grid-template-areas: '. . .' '. . .' '. . .';
+    //grid-template-columns: 580px 580px 580px;
+    //grid-template-columns: minmax(0, 3fr);
+    //grid-template-rows: minmax(0, 3fr);
+    //width: auto;
+    //margin: 0 auto;
+    //padding: 6vh 0 5vw;
+    //background-color: red;
+  }
+
+  //@include respond(1500) {
+  // grid-template-columns: 1fr 1fr 1fr;
+  // gap: 0 5%;
+  //}
+  @include respond(1500) {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 0 1%;
+    margin: 0 4rem;
+  }
+}
+
+.static-quad div:first-child {
+  @include respond(1500) {
+    //justify-self: left;
+  }
+}
+.static-quad div:nth-child(2) {
+  @include respond(1500) {
+    //margin-right: 3%;
+  }
+  @include respond(1921) {
+    //margin-right: 8%;
+  }
+}
+.static-quad div:nth-child(3) {
+  @include respond(1500) {
+    //margin-left: 3%;
+  }
+  @include respond(1921) {
+    //margin-left: 8%;
+  }
+}
+
+.static-quad div:last-child {
+  @include respond(1500) {
+    //justify-self: right;
+  }
+}
+
+/////////////// STATIC QUAD 2 /////////////////
+.static-quad2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1vw;
+  //justify-content: center;
+  //align-content: center;
+  //width: 100vw;
+  width: 100%;
+  padding-bottom: 1rem; //added oct 2022
+  //margin: $me;
+  //outline: 1px dotted #ffcc00;
+  @include respond(666) {
+    //show one, two hidden in carousel
+    gap: 0;
+    grid-template-columns: 1fr 1fr;
+    //width: 60vw;
+  }
+  @include respond(768) {
+    gap: 3vw;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @include respond(1000) {
+    padding-top: $la;
+    padding-bottom: 4rem; //added oct 2022
+  }
+
+  @include respond(1300) {
+    gap: 2vw;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+
+  }
+  @include respond(1500) {
+    padding-top: $la * 1.4;
+    
+  }
+}
+
+.static-quad2 div {
+  //width: 25vw;
+  justify-self: center;
+  align-self: center;
+  //outline: 1px dotted #000;
+  //margin-right: $me;
+  //margin: 0 $me;
+  //padding: 0;
+}
+.static-quad2 div:first-child {
+  //background: green;
+}
+.static-quad2 div:nth-child(2) {
+  //background: blue;
+}
+.static-quad2 div:nth-child(3) {
+  //background: purple;
+}
+.static-quad2 div:nth-child(4) {
+  //background: red;
+  //margin-right: 0;
+}
+
+.static-quad2 div img, .static-quad2 div video {
+  margin-top: $me;
+  width: 89vw;
+  @include respond(500) {
+    width: 87vw;
+  }
+  @include respond(666) {
+    width: 40vw;
+  }
+  @include respond(768) {
+    margin-top: 0;
+    width: 45vw;
+  }
+  @include respond(1200) {
+    width: 35vw;
+  }
+  @include respond(1500) {
+    width: 25vw;
+  }
+}
+
+
+.static-quad2 div:first-child img,
+.static-quad2 div:nth-child(2) img,
+.static-quad2 div:nth-child(3) img {
+  //padding-right: $me;
+}
+
+.static-quad2 div:first-child img,
+.static-quad2 div:nth-child(2) img, .static-quad2 div:nth-child(2) video {
+  @include respond(666) {
+    //padding-bottom: $me * 1.2;
+    margin-top: 2.6rem;
+    //margin-bottom: 1.56rem;
+  }
+  @include respond(768) {
+    padding-bottom: 0;
+  }
+  @include respond(1300) {
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+}
+
+.static-quad2 div:first-child img {
+  margin-top: 2.6rem;
+  //padding-top: $me;
+  @include respond(666) {
+    padding-top: 0;
+  }
+  @include respond(1300) {
+    margin-top: 0;
+  }
+  //padding-right: $me;
+}
+.static-quad2 div:nth-child(4) img {
+  margin-bottom: 1.3rem;
+  //padding-bottom: $me * 0.5;
+  //padding-right: $me;
+  @include respond(666) {
+    margin-top: 2.6rem;
+    padding-bottom: 0;
+  }
+  @include respond(666) {
+    margin-top: 1.3rem;
+  }
+}
+
+.rounded div img, .rounded div video {
+  border-radius: 0.8rem !important;
+  //border: 4px solid red;
+}
+
+
+
+// this CSS (.static-trio > div) below is duplication!??!?!?! ///////////
+// this CSS below is duplication!??!?!?! ///////////
+
+.static-quad > div {
+  //declare styles
+  //margin: 2rem 0;
+  //background-color: red;
+  //padding: 0 1.3rem; //for mobile only this is good, removed dec 2020 due to video overflow
+  margin-bottom: 2rem;
+  //border: 1px dotted #ffcc00;
+  //text-align: center;
+  //align-self: center;
+  justify-self: center;
+  //align-items: center;
+  //grid-column: 1 / 3;
+  @include respond(500) {
+    padding: 0;
+    //background-color: green;
+  }
+  @include respond(768) {
+    padding: 0;
+    //background-color: red;
+  }
+  @include respond(1000) {
+    //background-color: red;
+  }
+  @include respond(1600) {
+    //background-color: red;
+    //padding: 2rem;
+  }
+}
+
+.static-quad > div img,
+.static-quad > div video {
+  //width: 320px;
+  //object-fit: contain; //added oct 2022 to fit larger images in the quad //removed 2023 to fix iksuda shadow gap on mobile
+  //max-height: 70vh; //added oct 2022 to fit larger images in the quad
+  @include respond(666) {
+    //max-height: unset;
+    //max-height: 60vh; //added oct 2022 to fit larger images in the quad //removed 2023 to fix iksuda shadow gap on mobile
+  }
+  @include respond(1000) {
+    //max-height: unset;
+    //max-height: 70vh; //was 60vh added oct 2022 to fit larger images in the quad //removed 2023 to fix iksuda shadow gap on mobile
+  }
+}
+
+
+
+
+.static-quad > div img,
+.static-quad > div.player,
+.static-trio > div img,
+.two-col-left div img,
+.two-col-right div img {
+  //border: 10px solid #000;
+  //-webkit-box-shadow: 3px 3px 6px -2px rgba(0, 0, 0, 0.36);
+  @include shadow;
+}
+
+.panel-text {
+  //width: 90vw;
+  //margin: 4rem auto 4rem auto;
+  padding: 2rem 1.3rem;
+  @include respond(500) {
+    font-size: 75%; //needs checking
+    padding: 3rem 2.45rem;
+    //background-color: red;
+  }
+  @include respond(1000) {
+    //width: 90vw;
+    font-size: 100%;
+    //margin-right: 15vw;
+    //margin-bottom: 5vw;
+    padding: 6vh 18vw 6vw 3.75vw;
+  }
+  @include respond(1200) {
+    padding-left: 3.25vw;
+  }
+  @include respond(1300) {
+    //width: 90vw;
+    padding-left: 3.25vw;
+    //padding: 4rem 10rem 4rem 0.5rem;
+  }
+  @include respond(1500) {
+    //background-color: red;
+    padding: 7vh 14vw 5vw 16vw;
+  }
+  @include respond(2016) {
+    //margin: 0 20vw;
+    margin: 0 auto 0 auto;
+    max-width: 1920px;
+    padding: 4rem 22rem 6rem 22rem;
+    //background-color: darken($background-primary, 5%);
+    background: var(--bg-3);
+  }
+}
+
+.split5050 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1vw;
+  //justify-content: center;
+  //align-content: center;
+  //width: 100vw;
+  width: 100%;
+  padding-bottom: 1rem; //added oct 2022
+  padding:6rem;
+  padding-bottom: 0;
+
+}
+
+.split5050 img {
+  width:100%;
+  height:max-content;
+  object-fit: cover;
+  object-position: top left;
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////
+//////////// O V E R L A Y S  F O R  L O G O  P A G E  ///////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////
+.overlay-btn {
+  position: absolute;
+  cursor: pointer !important;
+  height: 99%;
+  width: 99%; //changed from 87.5% on 17th Nov
+  z-index: 10;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+
+  @include respond(500) {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.overlay-content {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%; //changed from 89% on 17th Nov
+  margin: 0; //changed from margin: 0 5.5%; on 17th Nov
+  overflow: hidden;
+  height: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  @include slide;
+  background-color: var(--bg-1);
+
+  @include respond(500) {
+    width: 100%;
+    margin: 0;
+  }
+}
+
+.overlay-content p {
+  padding: 1.3rem;
+
+  @include respond(500) {
+    padding: 2rem;
+    font-size: 1.5rem;
+  }
+  @include respond(666) {
+    padding: 1rem;
+    font-size: 1.05rem;
+  }
+  @include respond(768) {
+    padding: 1.5rem;
+    font-size: 1.2rem;
+  }
+  @include respond(1000) {
+    padding: 1rem;
+    font-size: 1.05rem;
+  }
+  @include respond(1200) {
+    padding: 1.5rem;
+    font-size: 1.25rem;
+  }
+  @include respond(1200) {
+    padding: 2rem;
+    font-size: 1.2rem;
+  }
+  @include respond(1300) {
+    font-size: 1.3rem;
+  }
+  @include respond(1300) {
+    font-size: 1.4rem;
+  }
+  @include respond(1666) {
+    font-size: 1.6rem;
+  }
+  @include respond(1921) {
+    font-size: 1.8rem;
+  }
+  @include respond(2016) {
+    font-size: 1.9rem;
+  }
+}
+
+.over-show {
+  left: 0;
+  height: 100%;
+  //width: 100%;
+  @include easeOut;
+  //background-color: aqua;
+}
+//adds to overlay button to hide it on logos page
+.js-fade {
+  opacity: 0;
+  transition: 0.5s ease-in-out;
+}
+.hide {
+  //max-height: 650px;
+  //height: auto;
+  animation: 1s fadeIn;
+  animation-fill-mode: forwards;
+  visibility: visible;
+  //visibility: hidden;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    //visibility: hidden; //removed this when playing with viddeo play button might break something 5/2/21
+    opacity: 0;
+  }
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+////  I M PO R T   V I D E  O   P L A Y E R  ///////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////
+@import '_videoPlayer';
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+// JS animation classes for fading /////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////
+/// 
+/// 
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 500ms ease-in, 
+  transform 500ms ease-in;
+}
+
+.fade-in.appear {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.from-left {
+  transform: translateX(-40px);
+}
+.from-right {
+  transform: translateX(40px);
+}
+.from-left, .from-right {
+  transition: 
+    opacity 300ms ease-in,
+    transform 400ms ease-in;
+  opacity: 0;
+}
+.from-left.appear, .from-right.appear {
+  transform: translateX(0);
+  opacity: 1;
+}
+//add from-left slide-in or from-right slide-in
+
+//////////////////////////////////////////////////////////////////////////
+///// CLIENT SPECIFIC ////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////
+
+//////////////// GAUGES FOR SCORE ////////////
+
+.tm .player:first-child {
+  //margin-bottom: 2rem;
+  margin-bottom: -1px;
+  @include respond(666) {
+    width: 92%;
+    margin-bottom: 0;
+  }
+}
+
+.tm .player {
+  text-align: center;
+  margin: auto;
+  //border: 1px solid red;
+  width: 80%;
+}
+
+.static-trio.tm {
+  padding: 4rem 0 4rem;
+  @include respond(666) {
+    grid-template-columns: 45% 45%;
+    justify-content: center;
+  }
+  @include respond(1000) {
+    grid-template-columns: 35% 35%;
+    justify-content: center;
+  }
+
+}
+//////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////// N E X T  +  B A C K ////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////
+.work-nav {
+  display: grid;
+  justify-items: center;
+  //@include outLine;
+  padding: 4rem 0;
+  background-color: var(--lighter); //colors.$text-highlight; //#161e36;
+}
+.work-nav h5 {
+  display: grid;
+  justify-items: center;
+  //@include outLine;
+}
+.nudge-right {
+  margin-right: 4rem;
+}
+.work-nav .holder {
+  margin: 1rem 0 0 0.7rem;
+}
+
+.work-nav .disc-btn {
+  //border: 1px solid var(--bg-3);
+  color: var(--bg-3);
+  background-color: var(--text-1);
+}
+.work-nav .disc-btn:hover {
+  //border: 1px solid var(--bg-3);
+  color: var(--bg-3);
+  background-color: var(--highlight);
+}
+
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+//// Q U O T E  P A N E L S  ///////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+.quote {
+  color: #FFF;
+  background-color:var(--highlight); //colors.$text-highlight; //#161e36; //colors.$text-highlight;//colors.$blue-accent; // //colors.$text-primary; rgb(16, 17, 95); 
+}
+
+
+.quote h2 {
+  color: #FFF !important;
+}
+
+

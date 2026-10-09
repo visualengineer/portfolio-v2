@@ -1,0 +1,440 @@
+@use '_colors';
+@import 'mixins';
+
+
+.wrapper {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.masonry-wrapper {
+  max-width: 1920px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 3rem;
+
+  @include respond(500) {
+    margin-right: 7%;
+    margin-left: 7%;
+  }
+  @include respond(666) {
+    margin-right: 10%;
+    margin-left: 10%;
+    text-align: center;
+  }
+  @include respond(768) {
+    margin-right: 5vw;
+    margin-left: 5vw;
+    margin-bottom: 5rem;
+  }
+  @include respond(1000) {
+    margin-right: 4vw;
+    margin-left: 4vw;
+  }
+  @include respond(1200) {
+    margin-right: 3.3vw;
+    margin-left: 3.3vw;
+  }
+  @include respond(2016) {
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 8rem;
+  }
+}
+
+.masonry {
+  columns: 1;
+  column-gap: 3.5vw;
+  transition: all 0.5s ease-in-out;
+  column-fill: initial;
+  @include respond(768) {
+    columns: 2;
+    column-gap: 2.5rem;
+  }
+  @include respond(1000) {
+    columns: 2;
+    column-gap: 2.5rem;
+    row-gap: 2.5rem;
+  }
+  @include respond(1300) {
+    columns: 3;
+    column-gap: 3.2vw;
+  }
+  @include respond(1500) {
+  }
+  @include respond(2016) {
+    column-gap: 3rem;
+    text-align: center;
+  }
+}
+
+
+
+// Below declaratin added Mar 2024 to fix Safari animation flicker bug on blue arrows:
+.masonry-item, .masonry-content, .masonry-item a, .masonry-item a:hover, .masonry-item a:after, .masonry-item a:hover:after, .masonry-item a:after, .masonry-item a:hover:after { 
+-webkit-backface-visibility: hidden;
+-webkit-transform-style: preserve-3d;
+}
+
+
+
+
+
+.masonry-item {
+  max-width: 580px; //added oct 2022 to cater for images @2x
+  //transition: .5s ease-in-out; //was added in oct 2022
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 1rem;
+  overflow: visible; /* added for the overlay/hover button/info */
+  //overflow: auto;
+  @include respond(500) {
+    margin-top: 2.5rem;
+  }
+  @include respond(1500) {
+    margin-top: 3rem;
+  }
+  @include respond(1666) {
+    margin-top: 3.5rem;
+  }
+  @include respond(2016) {
+    margin-top: 4.7rem;
+  }
+}
+.masonry-item a {
+  display: block;
+  transform: translateZ(0); //fixes Safari freaking oiut edges corener shadows etc
+  transition: filter 0.25s ease-in-out; ///////GOOD ///////
+  -webkit-font-smoothing: antialiased; ///////GOOD ///////
+  box-shadow: 3px 3px 6px -2px rgba(0, 0, 0, 0.1);
+  overflow: hidden; //added Mar 2024 - to fix Safari bug
+        //overflow: hidden; https://stackoverflow.com/questions/39842614/image-in-second-and-third-column-randomly-disappear-on-hover
+        //-webkit-backface-visibility: hidden; /* actual workaround */
+        //backface-visibility: hidden; /* perhaps this is not needed */
+        //width: auto;
+        //border: none;
+        //width: 100%;
+        //height: 100%;
+        //-webkit-backface-visibility: hidden;
+        //-moz-backface-visibility: hidden;
+        //-ms-backface-visibility: hidden;
+        //border: none;
+        //outline: none;
+  @include respond(500) {
+    border-radius: .75rem;
+  }
+}
+
+.masonry-item a:hover {
+  display: block;
+  transition: filter 0.25s ease-in-out; ///////GOOD ///////
+  -webkit-font-smoothing: antialiased; ///////GOOD ///////
+  //box-shadow: 3px 3px 6px -2px rgba(0, 0, 0, 0.1);
+
+}
+// fix Safari's capacity to animate. Yes, this is from tailwindcss
+.transition-colors {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+
+
+
+@keyframes fadeInNew {
+  0% {
+    opacity: 0;
+    //border-radius: 50%;
+  }
+  100% {
+    //visibility: hidden; //removed this when playing with viddeo play button might break something 5/2/21
+    opacity: 1;
+    //border-radius: 50%;
+  }
+}
+@keyframes fadeOutNew {
+  0% {
+    opacity: 1;
+    //border-radius: 50%;
+  }
+  100% {
+    //visibility: hidden; //removed this when playing with viddeo play button might break something 5/2/21
+    opacity: 0;
+    //border-radius: 50%;
+  }
+}
+
+.masonry-item a:after {
+  transition: opacity 0.5s;
+  //animation: 0.5s fadeOutNew ease-in forwards;
+  transition-timing-function: cubic-bezier(0,.97,1,.99);
+  opacity:0;
+}
+
+.masonry-item a:hover:after {
+    transition: opacity 0.2s;
+    transition-delay: 0.1s;
+    //animation: .75s fadeInNew ease-out forwards;
+    transition-timing-function: cubic-bezier(.78,.22,1,.99);
+    opacity:1;
+} 
+
+
+.masonry-item a:after, .masonry-item a:hover:after {
+  content:url('../img/icons/roll-arrow-2.svg');
+  transform: scale(0.75);
+    top: 0;
+    left: 0;
+    width:100%;
+    height:calc(100% - 2.25rem);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    //background: url('data:image/svg+xml,<svg width="209" height="209" viewBox="0 0 209 209" fill="none" xmlns="http://www.w3.org/2000/svg"><circle opacity="0.77" cx="104.5" cy="104.5" r="104.5" fill="#2C06FF"/><path d="M98.7838 63L138.316 102.532C139.561 103.778 139.561 105.645 138.316 106.89L98.7838 146.423M138.979 104.699L53.9994 104.699" stroke="#EFEFEF" stroke-width="6.22557" stroke-miterlimit="10"/></svg>') no-repeat 0px 0px;
+    //background: rgba(colors.$text-highlight, .4);
+    position:absolute;
+    margin: auto;
+} 
+
+
+// height on container auto? fixed????!?!?
+.masonry-item img {
+  @include respond(1300) {
+    transition: transform 0.5s ease;
+  }
+
+  //@include easeOut;
+  //width: auto;
+  //width: 100% !important;
+
+  //-webkit-font-smoothing: antialiased;
+  //filter: brightness(90%);
+  //-moz-transform: scale(1); this and three below were from here: https://stackoverflow.com/questions/39842614/image-in-second-and-third-column-randomly-disappear-on-hover
+  //-webkit-transform: scale(1);
+  //transform: scale(1);
+}
+/*
+@media (min-width: 1023px) and (max-width: 1024px) {
+  .masonry-item img {
+    width: 456px;
+  }
+}
+*/
+
+
+
+.masonry-item a,
+.masonry-content { // this was below before
+    //border-radius: 4px;
+    //width: 100%;
+    //height: 100%;
+  //overflow: hidden;
+    //border: none;
+    //-webkit-transform-style: preserve-3d;
+    //-webkit-backface-visibility: hidden;
+    //border: none;
+    //width: 100%;
+    //height: 100%;
+
+    // the three lines below stop a bit of jump but break 2 cols on ipad
+    //-webkit-backface-visibility: hidden; //fixes chrome ani jump bug
+    //-webkit-transform: translateZ(0) scale(1, 1); //fixes chrome ani jump bug
+    //transform: translateZ(0); //fixes chrome ani jump bug
+
+    //outline: 1px solid #fff;
+}
+
+
+.masonry-item:hover img {
+  @include respond(1300) {
+    transform: scale(1.1); ///////GOOD ///////
+    backface-visibility: hidden; /* Remove Image flickering on hover */ ///////GOOD ///////
+  }
+
+  //border: 1px solid rgba(255, 255, 255, 0);
+  //filter: brightness(100%);
+}
+
+/*
+  .masonry-footer {
+    font-size: 0.75em;
+    opacity: 0.25;
+    text-align: center;
+    padding-top: 3em;
+    padding-bottom: 3em;
+    margin-bottom: -1.5em;
+    transition: opacity 1s ease-in-out;
+  }
+  .masonry-footer a {
+    color: currentColor;
+  }
+  .masonry-footer:hover,
+  .masonry-footer:active,
+  .masonry-footer:focus {
+    opacity: 0.75;
+  }
+  */
+
+.info {
+  padding: 0.5rem 0 1rem 1.4rem;
+  display: inline-block;
+  margin-top: 0.5rem !important;
+  font-size: 0.9rem;
+  text-align: center;
+  letter-spacing: 0.02;
+  //font-family:"SFMono-Regular",Consolas,"Liberation Mono",Menlo,Courier,monospace;
+
+  @include respond(500) {
+    padding: 0.5rem 0 0 0;
+  }
+  @include respond(1300) {
+    font-size: 0.8rem;
+  }
+  @include respond(2016) {
+    //float: left;
+  }
+}
+
+@media (hover: none) {
+  .info::before {
+    content: '\2191\0020';
+  }
+}
+
+
+.quotemark {
+  transform: rotate(180deg);
+  bottom: 0px;
+  top:2px;
+  left: 4px;
+  height: 16px;
+  //line-height: 0.1rem;
+  //right: 0;
+  width: 14px;
+  margin-right: 0.25rem;
+  background-color: var(--text-1);
+  mask: var(--quote) no-repeat 0px 1px;
+  //background: url('../img/icons/quote.svg') no-repeat 0px 1px;
+  //background-color: rgba(44,6,255,0.4);
+  //colors.$text-primary;
+  background-size: 90%;
+  // /border-radius: 50%;
+  position: relative;
+  display: inline-block;
+  //padding: 2px 6px 0;
+  text-align: center;
+  //transform: translateX(0px);
+  //transition: 1s all;
+  //outline: 1px dotted #FFCC00;
+  //vertical-align: middle;
+  //z-index: 9999;
+  @include respond(1300) {
+    background-size: 82%;
+    mask: var(--quote) no-repeat 0px 0px;
+  }
+}
+
+
+////// Order added Mar 2024 - not really working - remove from HTML adn then delete here //// use with counter?
+
+.one {
+  order:1;
+}
+.two {
+  order:2;
+}
+.three {
+  order:3;
+}
+.four {
+  order:4;
+}
+.five {
+  order:5;
+}
+.six {
+  order:6;
+}
+.seven {
+  order:7;
+}
+.eight {
+  order:8;
+}
+.nine {
+  order:9;
+}
+.ten {
+  order:10;
+}
+.eleven {
+  order:11;
+}
+.twelve {
+  order:12;
+}
+.thirteen {
+  order:13;
+}
+.fourteen {
+  order:14;
+}
+.fifteen {
+  order:15;
+}
+.sixteen {
+  order:16;
+}
+.seventeen {
+  order:17;
+}
+.eighteen {
+  order:18;
+}
+.nineteen {
+  order:19;
+}
+.twenty {
+  order:20;
+}
+
+
+
+
+///////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////
+///   L O G O   S T R I P     /////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////
+.logo-strip {
+  margin-top: 4rem;
+  background: #000;
+  text-align: center;
+  @include respond(1000) {
+    margin-top: 10rem;
+  }
+}
+.logo-strip img {
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 3rem;
+  @include respond(768) {
+    width:400px;
+  }
+  @include respond(1000) {
+    width:480px;
+    padding-bottom: 2rem;
+  }
+}
+.logo-strip h2 {
+  color: #fff;
+  padding: 4rem 0 0;
+  @include respond(1000) {
+    padding: 6rem 0 0;
+  }
+}
+
+
+
+

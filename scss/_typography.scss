@@ -1,0 +1,527 @@
+@use '_colors';
+@use '_mixins' as *;
+//$font: 'Inter UI', Helvetica Neue, Arial, sans-serif;
+
+$font: system-ui, -apple-system, BlinkMacSystemFont, 'Inter UI', 'SegoeUI', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+
+// Master font size and line height set in reset ////////////////////////////////////////////////////////////
+::selection {
+  color: var(--bg-1);
+  background: var(--highlight); //colors.$text-highlight;
+}
+
+p,
+.ac-container label,
+table,
+ul,
+.color-wrap p {
+  font-size: 1.3rem;
+  line-height: 1.4;
+  margin-bottom: 1.6rem;
+  color: var(--text-1); //colors.$text-primary;
+  font-family: $font;
+  //outline: 1px dotted #000;
+  @include respond(1300) {
+    font-size: 1.6rem;
+  }
+}
+
+
+// added 2024 for flags experiemnt
+.nanoText {
+  font-size: 1rem;
+  line-height: 1.3;
+  margin-bottom: 1.4rem;
+  color: var(--text-1); //colors.$text-primary;
+  font-family: $font;
+}
+
+.panel-text table {
+  border-collapse: collapse;
+  //border: 1px solid;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  vertical-align: middle;
+}
+ th {
+  font-size: 80% !important;
+  font-weight: 500;
+  background: var(--bg-4); //var(--bg-4); //colors.$blue-darkest;
+}
+.panel-text td, th {
+  border: 1px solid var(--bg-1); // var(--bg-1); //colors.$blue-primary;
+  padding: 1rem;
+  margin: 0;
+  text-align: center;
+  vertical-align: middle;
+  position: relative;
+  //display: inline-block;
+}
+.panel-text table td p {
+  display: inline-block;
+  vertical-align: middle;
+}
+.panel-text td img {
+  margin-left: auto;
+  margin-right: auto;
+  filter: drop-shadow(1px 1px 3px rgb(2, 6, 131));
+  //box-shadow: 4px 4px 10px 0px rgba(0,0,0,0.5);
+}
+tr:nth-child(even) {
+  background-color: var(--bg-1); //darken(colors.$blue-primary, 5%);
+}
+
+
+.testgrid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: auto;
+  grid-gap: 0;
+  overflow: auto;
+}
+.testgrid > div {
+  padding: 1rem;
+  border: 1px solid  var(--bg-1); //colors.$blue-primary;
+  text-align: center;
+}
+
+.testgrid img {
+  margin-left: auto;
+  margin-right: auto;
+  filter: drop-shadow(1px 1px 3px rgb(2, 6, 131));
+}
+
+
+
+/*
+.grid > div:first-child {
+  grid-column: span 4;
+}
+*/
+
+.testgrid > div:nth-child(1),
+.testgrid > div:nth-child(2),
+.testgrid > div:nth-child(3), 
+.testgrid > div:nth-child(4),
+.testgrid > div:nth-child(5) {
+  font-weight: bold;
+  background-color: var(--bg-4); //colors.$blue-darkest;
+  border: 1px solid  var(--bg-1); //colors.$blue-primary;
+  border-top: 0;
+  //border: 1px solid var(--bg-4); //colors.$blue-darkest;
+}
+
+.testgrid > div:nth-child(5n) {
+  border-right: 0;
+}
+.testgrid > div:nth-child(5n-4) {
+  border-left: 0;
+}
+
+
+.testgrid > div:nth-child(10n + 6),
+.testgrid > div:nth-child(10n + 7),
+.testgrid > div:nth-child(10n + 8),
+.testgrid > div:nth-child(10n + 9),
+.testgrid > div:nth-child(10n + 10) {
+  background-color: var(--bg-1); //darken(colors.$blue-primary, 5%);
+}
+// end added table for flags 2024
+
+/*
+.clear-user-agent-styles table,
+.clear-user-agent-styles thead,
+.clear-user-agent-styles tbody,
+.clear-user-agent-styles tfoot,
+.clear-user-agent-styles tr,
+.clear-user-agent-styles th,
+.clear-user-agent-styles td {
+    display: block;
+    width: auto;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    border: none;
+    border-collapse: inherit;
+    border-spacing: 0;
+    border-color: inherit;
+    vertical-align: inherit;
+    text-align: left;
+    font-weight: inherit;
+    -webkit-border-horizontal-spacing: 0;
+    -webkit-border-vertical-spacing: 0;
+}
+th, td {
+    display: inline;
+}
+*/
+
+
+p.micro {
+  font-size: 1rem;
+  line-height: 1.3;
+  margin-bottom: 1.4rem;
+  color: var(--text-1); //colors.$text-primary;
+  font-family: $font;
+
+  @-moz-document url-prefix() {
+    //font-size: 100% !important;
+    letter-spacing: -0.1px;
+  }
+
+  //outline: 1px dotted #000;
+  @include respond(500) {
+    font-size: 1.2rem;
+  }
+  @include respond(666) {
+    font-size: 1.3rem;
+  }
+  @include respond(768) {
+    font-size: 1.15rem;
+  }
+  @include respond(1000) {
+    font-size: 1.1rem;
+  }
+  @include respond(1200) {
+    font-size: 1.2rem;
+  }
+  @include respond(1300) {
+    font-size: 1rem;
+  }
+  @include respond(1400) {
+    font-size: 1.1rem;
+  }
+  @include respond(1500) {
+    font-size: 1.3rem;
+  }
+  @include respond(1921) {
+    font-size: 1.4rem;
+  }
+}
+
+.two-col-left h4,
+.two-col-left p,
+.two-col-right h4,
+.two-col-right p {
+  font-size: 1.3rem;
+  @include respond(500) {
+    font-size: 1.5rem;
+  }
+  @include respond(1000) {
+    font-size: 1.8rem;
+  }
+  @include respond(1300) {
+    font-size: 2.1rem;
+    line-height: 1.2;
+  }
+  @include respond(2016) {
+    font-size: 2.4rem;
+  }
+}
+
+input[type='text'] + label {
+  padding-top: 1rem; // extra space for form inputs only
+}
+
+h4::before, h5::before {
+  margin: 10rem;
+}
+
+h5 {
+}
+
+h6 {
+}
+
+p a, .footLeft a {
+  color: var(--text-1); //colors.$text-primary;
+  //outline: 1px dotted #000;
+
+  @include respond(1300) {
+    font-size: 100%;
+  }
+}
+
+p a:hover {
+  color: var(--highlight); //colors.$text-highlight;
+  //outline: 1px dotted #000;
+  @include respond(1300) {
+    font-size: 100%;
+  }
+}
+.subnav li a {
+  font-size: 1.3rem;
+  color: var(--text-1); //colors.$text-primary;
+  @include respond(1300) {
+    font-size: 1.6rem;
+  }
+}
+
+h1 {
+  //font-weight: 600;
+  line-height: 1.3;
+}
+h2 {
+  font-weight: 400;
+}
+
+h1,
+h2, .panel-text ol {
+  color: var(--text-1); //colors.$text-primary;
+  font-size: 1.5rem;
+  @include respond(500) {
+    font-size: 2rem;
+    //color: blue;
+  }
+  @include respond(1300) {
+    font-size: 2.4rem;
+    line-height: 1.17;
+    //color: red;
+  }
+  @include respond(2016) {
+    font-size: 2.8rem;
+  }
+}
+
+.istesso h2, .istesso .asterisk,  .istesso .asterisk a {
+  color: var(--text-2);
+}
+
+.panel-text ol {
+  margin: 1rem 0 0.5rem;
+  padding: 0;
+  counter-reset: item;
+  @include respond(1000) {
+    padding-left: 1rem;
+  }
+}
+
+.panel-text ol > li {
+  margin: 0 0 1rem;
+  padding: 0 0 0 2rem;
+  text-indent: -1rem;
+  list-style-type: none;
+  counter-increment: item;
+  @include respond(1000) {
+    text-indent: -1.5rem;
+  }
+}
+
+.panel-text ol > li:before {
+  display: inline-block;
+  width: 1rem;
+  //padding-right: 0.5em;
+  font-weight: bold;
+  padding-right: 1rem;
+  text-align: right;
+  content: counter(item) ".";
+  @include respond(1000) {
+    padding-right: 1.5rem;
+  }
+}
+
+
+.panel-text cite {
+  display: block;
+  font-size: 1.5rem;
+  padding-top: 1rem !important;
+}
+
+.tags h3 {
+  //font-weight: 600;
+  letter-spacing: 0.02rem;
+  margin: 2.2rem 0 0.5rem 0.1rem;
+}
+
+h4, h5 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--text-1); //colors.$text-primary;
+  padding-bottom: $mi;
+  //outline: 1px dotted #000;
+  @include respond(1300) {
+    font-size: 1.6rem;
+  }
+}
+
+.intro {
+  color: var(--text-1); //colors.$text-primary;
+  font-size: 1.4rem;
+  //text-rendering: geometricPrecision;
+
+  span::before {
+    content: '\A';
+    white-space: pre;
+
+    @include respond(400) {
+      content: '';
+      white-space: pre-wrap;
+    }
+  }
+
+  @include respond(500) {
+    font-size: 1.625rem;
+  }
+  @include respond(1300) {
+    font-size: 2.4rem;
+    line-height: 1.2;
+  }
+  @include respond(2016) {
+    font-size: 2.8rem;
+  }
+}
+
+.intro a {
+  text-decoration: none;
+  //text-decoration-skip-ink: auto;
+  border-bottom: 1px dotted #fff;
+}
+
+.intro strong {
+  display: inline-block;
+  padding-bottom: 0.5rem;
+}
+
+header p {
+  & a {
+    color: var(--text-1); //colors.$text-primary;
+    //text-underline-position: below;
+    //border-bottom: 1px dotted colors.$text-primary;
+    text-align: center;
+  }
+
+  & a:hover {
+    //color: colors.$text-highlight;
+    color: var(--bg-1);
+    background-color:  var(--highlight); //colors.$text-highlight;
+    //@include easeOut;
+  }
+
+  & a:focus {
+  } //Like :hover but where the link is selected using the Tab key on a keyboard. Hover and focus states are often styled together.
+  & a:visited {
+  }
+  & a:active {
+  }
+}
+
+.navText {
+  font-size: 1.313rem;
+}
+a.disc-btn {
+  font-size: 0.875rem;
+  border: 1px solid  var(--bg-5);
+  text-decoration: none;
+}
+.tags > a.disc-btn {
+  pointer-events: none;
+}
+a.active.disc-btn {
+  color: var(--bg-1);
+}
+a:hover.disc-btn {
+  font-size: 0.875rem;
+  //border: 1px solid var(--text-1);
+  color: var(--bg-1);
+  background-color: var(--text-1);
+}
+.tags > .disc-btn {
+  margin-left:-0.15rem;
+}
+.tags > .disc-btn ~ .disc-btn {
+  margin-left:0;
+}
+.disc-btn {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  color: var(--text-1);
+  font-size: 0.9em;
+  border-radius: 1.25rem;
+  margin-right: 0.5rem;
+  margin-top: 0.5rem;
+}
+.disc-btn:first-child {
+  margin-left: 0;
+}
+//sub link text in project sign-offs
+.site-info {
+  display: block;
+  margin-top: 0.75rem;
+  color: #7d69f0;
+  font-size: 0.8rem;
+  width: 16rem;
+}
+
+.col-full-wdith p,
+.col-full-wdith h2 {
+  //background: green;
+  //margin: 3rem;
+  padding-top: 3rem;
+  text-align: center;
+}
+
+.col-full-wdith h2 {
+  font-weight: 600;
+  //font-size: 200%;
+}
+
+////// to be put somewhere /////////
+.static-trio > div p a,
+h2 a {
+  color: var(--text-1); //colors.$text-primary;
+  border-bottom: 1px dotted;
+}
+
+.static-trio > div p a:hover,
+h2 a:hover {
+  color:  var(--highlight); //colors.$text-highlight;
+  border-bottom: 0px dotted;
+}
+
+// .aboutPage li :first-child { margin-top: 0 !important;  background: red;}
+
+//.aboutPage ul {  margin: 0 !important;  padding: 0 !important;}
+h4 + ul {
+  margin-top: 0;
+}
+
+ul + h4 {
+  margin-top: 2rem;
+}
+//////////////////// GENERIC ////////////////
+.cent {
+  text-align: center;
+}
+
+sup {
+  line-height: 0;
+  font-size: 75%;
+  //
+  //vertical-align: 75% !important;
+  //line-height:auto;
+  //font-size: 40%;
+  //margin-left: -0.25%
+}
+
+//////////////////// PROBLEMS IN FORM ////////////////
+.error {
+  color: red;
+}
+
+/////////////////// I N C I D E N T A L S //////////////////
+
+sup,
+sub {
+  vertical-align: baseline;
+  position: relative;
+  top: -0.2rem;
+}
+sub {
+  top: 0.2rem;
+}
+
+.asterisk {
+  margin-top: 1rem;
+  font-size: 120%;
+}

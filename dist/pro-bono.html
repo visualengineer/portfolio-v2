@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, width=device-width, maximum-scale=3.0" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta name="apple-mobile-web-app-title" content="James G" />
+    <meta name="application-name" content="James G" />
+    <meta name="msapplication-TileColor" content="#0000ff" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="description" content="Pro bono offering outlined with a description of the criteria required from freelance designer James Garnham." />
+    <title>James Garnham - Freelance designer, writer, animator & coder</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link rel="canonical" href="https://jamesgarnham.com/pro-bono.html" />
+    <link rel="manifest" href="site.webmanifest" />
+    <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5" />
+    <link rel="stylesheet" href="css/main.css" />
+        <!-- Google tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-DMMBE3ZN0W">
+        </script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+        
+          gtag('config', 'G-DMMBE3ZN0W');
+        </script>
+  </head>
+
+  <body>
+    <nav>
+      <div class="james">
+        <!-- link one -->
+        <a href="index.html"><strong>James Garnham</strong></a>
+      </div>
+      <div class="break"></div>
+      <div class="work">
+        <!-- link two -->
+        <a href="index.html">Work</a>
+      </div>
+      <div class="about">
+        <!-- link four -->
+        <a href="about.html">About</a>
+      </div>
+      <div class="pro-bono">
+        <!-- link four -->
+        <a href="pro-bono.html" class="current">Pro bono</a>
+      </div>
+    </nav>
+
+    <div class="wrapper probonoPage">
+
+<ul class="subnav">
+  <li><a href="#contactDeats">Pro Bono</a></li>
+  <!--<li><a href="#enquiry">Enquiry form</a></li>-->
+</ul>
+<div class="content" id="vueApp">
+<h4 class="anchor pro">Pro bono</h4>
+<p>Each month I spend a portion of my time working pro bono for individuals and small businesses that have a direct impact on society or a local community,  helping with any strategy, design, coding, brand and/or digital requirements. 
+  
+<p>If you or your business falls into this category and you would like to receive some assistance, please drop me a line below.</p>
+<form novalidate>
+  <label for="validationServer01" class="form-label text-field">Name <sup>*</sup></label>
+  <input type="text" class="form-control" name="pro_name" 												
+          v-model="referalForm.fieldContent.pro_name" 
+          v-bind:class="{'form-control':true, 'is-invalid' : !validateText(referalForm.fieldContent.pro_name,'pro_name') && referalForm.fieldStatus.pro_name.blurred}" 
+          v-on:blur="referalForm.fieldStatus.pro_name.blurred = true"
+          placeholder="Clark Kent" value="">
+
+  <label for="validationServer02" class="form-label text-field">Company name <sup>*</sup></label>
+  <input type="text" class="form-control" name="pro_coname"												
+              v-model="referalForm.fieldContent.pro_coname" 
+              v-bind:class="{'form-control':true, 'is-invalid' : !validateText(referalForm.fieldContent.pro_coname,'pro_coname') && referalForm.fieldStatus.pro_coname.blurred}" 
+              v-on:blur="referalForm.fieldStatus.pro_coname.blurred = true"
+          placeholder="Super Company" value="">   
+  
+  <div class="box">
+    <label for="validationServer02" class="form-label text-field">Country <sup>*</sup></label>
+        <select class="form-control" name="pro_country"												
+        v-model="referalForm.fieldContent.pro_country" 
+        v-bind:class="{'form-control':true, 'is-invalid' : !validateText(referalForm.fieldContent.pro_country,'pro_country') && referalForm.fieldStatus.pro_country.blurred}" 
+        v-on:blur="referalForm.fieldStatus.pro_country.blurred = true"
+    placeholder="Krypton" value="" >
+        <option value="" disabled selected hidden>Select a country</option>
+        <option value="United Kingdom">United Kingdom</option>
+        <option value="United States of America">United States of America</option>
+        <option value="Afganistan">Afghanistan</option>
+        <option value="Albania">Albania</option>
+        <option value="Algeria">Algeria</option>
+        <option value="American Samoa">American Samoa</option>
+        <option value="Andorra">Andorra</option>
+        <option value="Angola">Angola</option>
+        <option value="Anguilla">Anguilla</option>
+        <option value="Antigua & Barbuda">Antigua & Barbuda</option>
+        <option value="Argentina">Argentina</option>
+        <option value="Armenia">Armenia</option>
+        <option value="Aruba">Aruba</option>
+        <option value="Australia">Australia</option>
+        <option value="Austria">Austria</option>
+        <option value="Azerbaijan">Azerbaijan</option>
+        <option value="Bahamas">Bahamas</option>
+        <option value="Bahrain">Bahrain</option>
+        <option value="Bangladesh">Bangladesh</option>
+        <option value="Barbados">Barbados</option>
+        <option value="Belarus">Belarus</option>
+        <option value="Belgium">Belgium</option>
+        <option value="Belize">Belize</option>
+        <option value="Benin">Benin</option>
+        <option value="Bermuda">Bermuda</option>
+        <option value="Bhutan">Bhutan</option>
+        <option value="Bolivia">Bolivia</option>
+        <option value="Bonaire">Bonaire</option>
+        <option value="Bosnia & Herzegovina">Bosnia & Herzegovina</option>
+        <option value="Botswana">Botswana</option>
+        <option value="Brazil">Brazil</option>
+        <option value="British Indian Ocean Ter">British Indian Ocean Ter</option>
+        <option value="Brunei">Brunei</option>
+        <option value="Bulgaria">Bulgaria</option>
+        <option value="Burkina Faso">Burkina Faso</option>
+        <option value="Burundi">Burundi</option>
+        <option value="Cambodia">Cambodia</option>
+        <option value="Cameroon">Cameroon</option>
+        <option value="Canada">Canada</option>
+        <option value="Canary Islands">Canary Islands</option>
+        <option value="Cape Verde">Cape Verde</option>
+        <option value="Cayman Islands">Cayman Islands</option>
+        <option value="Central African Republic">Central African Republic</option>
+        <option value="Chad">Chad</option>
+        <option value="Channel Islands">Channel Islands</option>
+        <option value="Chile">Chile</option>
+        <option value="China">China</option>
+        <option value="Christmas Island">Christmas Island</option>
+        <option value="Cocos Island">Cocos Island</option>
+        <option value="Colombia">Colombia</option>
+        <option value="Comoros">Comoros</option>
+        <option value="Congo">Congo</option>
+        <option value="Cook Islands">Cook Islands</option>
+        <option value="Costa Rica">Costa Rica</option>
+        <option value="Cote DIvoire">Cote DIvoire</option>
+        <option value="Croatia">Croatia</option>
+        <option value="Cuba">Cuba</option>
+        <option value="Curaco">Curacao</option>
+        <option value="Cyprus">Cyprus</option>
+        <option value="Czech Republic">Czech Republic</option>
+        <option value="Denmark">Denmark</option>
+        <option value="Djibouti">Djibouti</option>
+        <option value="Dominica">Dominica</option>
+        <option value="Dominican Republic">Dominican Republic</option>
+        <option value="East Timor">East Timor</option>
+        <option value="Ecuador">Ecuador</option>
+        <option value="Egypt">Egypt</option>
+        <option value="El Salvador">El Salvador</option>
+        <option value="Equatorial Guinea">Equatorial Guinea</option>
+        <option value="Eritrea">Eritrea</option>
+        <option value="Estonia">Estonia</option>
+        <option value="Ethiopia">Ethiopia</option>
+        <option value="Falkland Islands">Falkland Islands</option>
+        <option value="Faroe Islands">Faroe Islands</option>
+        <option value="Fiji">Fiji</option>
+        <option value="Finland">Finland</option>
+        <option value="France">France</option>
+        <option value="French Guiana">French Guiana</option>
+        <option value="French Polynesia">French Polynesia</option>
+        <option value="French Southern Ter">French Southern Ter</option>
+        <option value="Gabon">Gabon</option>
+        <option value="Gambia">Gambia</option>
+        <option value="Georgia">Georgia</option>
+        <option value="Germany">Germany</option>
+        <option value="Ghana">Ghana</option>
+        <option value="Gibraltar">Gibraltar</option>
+        <option value="Great Britain">Great Britain</option>
+        <option value="Greece">Greece</option>
+        <option value="Greenland">Greenland</option>
+        <option value="Grenada">Grenada</option>
+        <option value="Guadeloupe">Guadeloupe</option>
+        <option value="Guam">Guam</option>
+        <option value="Guatemala">Guatemala</option>
+        <option value="Guinea">Guinea</option>
+        <option value="Guyana">Guyana</option>
+        <option value="Haiti">Haiti</option>
+        <option value="Hawaii">Hawaii</option>
+        <option value="Honduras">Honduras</option>
+        <option value="Hong Kong">Hong Kong</option>
+        <option value="Hungary">Hungary</option>
+        <option value="Iceland">Iceland</option>
+        <option value="Indonesia">Indonesia</option>
+        <option value="India">India</option>
+        <option value="Iran">Iran</option>
+        <option value="Iraq">Iraq</option>
+        <option value="Ireland">Ireland</option>
+        <option value="Isle of Man">Isle of Man</option>
+        <option value="Israel">Israel</option>
+        <option value="Italy">Italy</option>
+        <option value="Jamaica">Jamaica</option>
+        <option value="Japan">Japan</option>
+        <option value="Jordan">Jordan</option>
+        <option value="Kazakhstan">Kazakhstan</option>
+        <option value="Kenya">Kenya</option>
+        <option value="Kiribati">Kiribati</option>
+        <option value="Korea North">Korea North</option>
+        <option value="Korea Sout">Korea South</option>
+        <option value="Kuwait">Kuwait</option>
+        <option value="Kyrgyzstan">Kyrgyzstan</option>
+        <option value="Laos">Laos</option>
+        <option value="Latvia">Latvia</option>
+        <option value="Lebanon">Lebanon</option>
+        <option value="Lesotho">Lesotho</option>
+        <option value="Liberia">Liberia</option>
+        <option value="Libya">Libya</option>
+        <option value="Liechtenstein">Liechtenstein</option>
+        <option value="Lithuania">Lithuania</option>
+        <option value="Luxembourg">Luxembourg</option>
+        <option value="Macau">Macau</option>
+        <option value="Macedonia">Macedonia</option>
+        <option value="Madagascar">Madagascar</option>
+        <option value="Malaysia">Malaysia</option>
+        <option value="Malawi">Malawi</option>
+        <option value="Maldives">Maldives</option>
+        <option value="Mali">Mali</option>
+        <option value="Malta">Malta</option>
+        <option value="Marshall Islands">Marshall Islands</option>
+        <option value="Martinique">Martinique</option>
+        <option value="Mauritania">Mauritania</option>
+        <option value="Mauritius">Mauritius</option>
+        <option value="Mayotte">Mayotte</option>
+        <option value="Mexico">Mexico</option>
+        <option value="Midway Islands">Midway Islands</option>
+        <option value="Moldova">Moldova</option>
+        <option value="Monaco">Monaco</option>
+        <option value="Mongolia">Mongolia</option>
+        <option value="Montserrat">Montserrat</option>
+        <option value="Morocco">Morocco</option>
+        <option value="Mozambique">Mozambique</option>
+        <option value="Myanmar">Myanmar</option>
+        <option value="Nambia">Nambia</option>
+        <option value="Nauru">Nauru</option>
+        <option value="Nepal">Nepal</option>
+        <option value="Netherland Antilles">Netherland Antilles</option>
+        <option value="Netherlands">Netherlands (Holland, Europe)</option>
+        <option value="Nevis">Nevis</option>
+        <option value="New Caledonia">New Caledonia</option>
+        <option value="New Zealand">New Zealand</option>
+        <option value="Nicaragua">Nicaragua</option>
+        <option value="Niger">Niger</option>
+        <option value="Nigeria">Nigeria</option>
+        <option value="Niue">Niue</option>
+        <option value="Norfolk Island">Norfolk Island</option>
+        <option value="Norway">Norway</option>
+        <option value="Oman">Oman</option>
+        <option value="Pakistan">Pakistan</option>
+        <option value="Palau Island">Palau Island</option>
+        <option value="Palestine">Palestine</option>
+        <option value="Panama">Panama</option>
+        <option value="Papua New Guinea">Papua New Guinea</option>
+        <option value="Paraguay">Paraguay</option>
+        <option value="Peru">Peru</option>
+        <option value="Phillipines">Philippines</option>
+        <option value="Pitcairn Island">Pitcairn Island</option>
+        <option value="Poland">Poland</option>
+        <option value="Portugal">Portugal</option>
+        <option value="Puerto Rico">Puerto Rico</option>
+        <option value="Qatar">Qatar</option>
+        <option value="Republic of Montenegro">Republic of Montenegro</option>
+        <option value="Republic of Serbia">Republic of Serbia</option>
+        <option value="Reunion">Reunion</option>
+        <option value="Romania">Romania</option>
+        <option value="Russia">Russia</option>
+        <option value="Rwanda">Rwanda</option>
+        <option value="St Barthelemy">St Barthelemy</option>
+        <option value="St Eustatius">St Eustatius</option>
+        <option value="St Helena">St Helena</option>
+        <option value="St Kitts-Nevis">St Kitts-Nevis</option>
+        <option value="St Lucia">St Lucia</option>
+        <option value="St Maarten">St Maarten</option>
+        <option value="St Pierre & Miquelon">St Pierre & Miquelon</option>
+        <option value="St Vincent & Grenadines">St Vincent & Grenadines</option>
+        <option value="Saipan">Saipan</option>
+        <option value="Samoa">Samoa</option>
+        <option value="Samoa American">Samoa American</option>
+        <option value="San Marino">San Marino</option>
+        <option value="Sao Tome & Principe">Sao Tome & Principe</option>
+        <option value="Saudi Arabia">Saudi Arabia</option>
+        <option value="Senegal">Senegal</option>
+        <option value="Seychelles">Seychelles</option>
+        <option value="Sierra Leone">Sierra Leone</option>
+        <option value="Singapore">Singapore</option>
+        <option value="Slovakia">Slovakia</option>
+        <option value="Slovenia">Slovenia</option>
+        <option value="Solomon Islands">Solomon Islands</option>
+        <option value="Somalia">Somalia</option>
+        <option value="South Africa">South Africa</option>
+        <option value="Spain">Spain</option>
+        <option value="Sri Lanka">Sri Lanka</option>
+        <option value="Sudan">Sudan</option>
+        <option value="Suriname">Suriname</option>
+        <option value="Swaziland">Swaziland</option>
+        <option value="Sweden">Sweden</option>
+        <option value="Switzerland">Switzerland</option>
+        <option value="Syria">Syria</option>
+        <option value="Tahiti">Tahiti</option>
+        <option value="Taiwan">Taiwan</option>
+        <option value="Tajikistan">Tajikistan</option>
+        <option value="Tanzania">Tanzania</option>
+        <option value="Thailand">Thailand</option>
+        <option value="Togo">Togo</option>
+        <option value="Tokelau">Tokelau</option>
+        <option value="Tonga">Tonga</option>
+        <option value="Trinidad & Tobago">Trinidad & Tobago</option>
+        <option value="Tunisia">Tunisia</option>
+        <option value="Turkey">Turkey</option>
+        <option value="Turkmenistan">Turkmenistan</option>
+        <option value="Turks & Caicos Is">Turks & Caicos Is</option>
+        <option value="Tuvalu">Tuvalu</option>
+        <option value="Uganda">Uganda</option>
+        <option value="Ukraine">Ukraine</option>
+        <option value="United Arab Erimates">United Arab Emirates</option>
+        <option value="Uraguay">Uruguay</option>
+        <option value="Uzbekistan">Uzbekistan</option>
+        <option value="Vanuatu">Vanuatu</option>
+        <option value="Vatican City State">Vatican City State</option>
+        <option value="Venezuela">Venezuela</option>
+        <option value="Vietnam">Vietnam</option>
+        <option value="Virgin Islands (Brit)">Virgin Islands (Brit)</option>
+        <option value="Virgin Islands (USA)">Virgin Islands (USA)</option>
+        <option value="Wake Island">Wake Island</option>
+        <option value="Wallis & Futana Is">Wallis & Futana Is</option>
+        <option value="Yemen">Yemen</option>
+        <option value="Zaire">Zaire</option>
+        <option value="Zambia">Zambia</option>
+        <option value="Zimbabwe">Zimbabwe</option>
+        </select>
+    </div>
+  <label for="validationServer02" class="form-label text-field">Phone no. <sup>*</sup></label>
+  <input type="text" class="form-control" name="pro_phone" 												
+      v-model="referalForm.fieldContent.pro_phone" 
+      v-bind:class="{'form-control':true, 'is-invalid' : !validateText(referalForm.fieldContent.pro_phone,'pro_phone') && referalForm.fieldStatus.pro_phone.blurred}" 
+      v-on:blur="referalForm.fieldStatus.pro_phone.blurred = true"
+  placeholder="Best contact no." v-on:keypress="NumbersOnly" value="">
+
+  <label for="validationServer02" class="form-label text-field">Email address <sup>*</sup></label>
+  <input type="text" class="form-control" name="pro_email"												
+      v-model="referalForm.fieldContent.pro_email" 
+      v-bind:class="{'form-control':true, 'is-invalid' : !validEmail(referalForm.fieldContent.pro_email) && referalForm.fieldStatus.pro_email.blurred}" 
+      v-on:blur="referalForm.fieldStatus.pro_email.blurred = true"
+  placeholder="Your email address" value="">
+<!--
+  <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="vet_remember" v-model="referalForm.fieldContent.vet_remember" id="vetRemeber01" value="yes" checked>
+      <label class="form-check-label" for="vetRemeber01">Yes</label>
+  </div>
+-->
+<label for="comment" class="text-field">Comment <sup>*</sup></label>
+<textarea class="form-control" name="pro_comment"												
+v-model="referalForm.fieldContent.pro_comment" 
+v-bind:class="{'form-control':true, 'is-invalid' : !validateText(referalForm.fieldContent.pro_comment,'pro_comment') && referalForm.fieldStatus.pro_comment.blurred}" 
+v-on:blur="referalForm.fieldStatus.pro_comment.blurred = true"
+placeholder="We are looking to..." value=""></textarea>
+
+
+
+<div class="form-check">
+  <div class="text-danger" v-if="isDisabled && !referalForm.valid">Please check the highlighted fields before continuing</div>
+</div><!--end form-check-->
+
+<div class="sending">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="margin: 0; background: rgb(44, 14, 255); display: block; shape-rendering: auto;" width="100px" height="100px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
+  <circle cx="13" cy="23" r="13" fill="#FFFFFF">
+    <animate attributeName="cy" dur="1s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.9 0.55;0 0.45 0.55 0.9" keyTimes="0;0.5;1" values="23;77;23"></animate>
+  </circle>
+</svg>
+</div>
+
+<button style="border-radius: 2rem; padding: 1rem 2rem;" class="gen-btn form-button" type="submit" :disabled="referalForm.blurred && !referalForm.valid" v-on:click.stop.prevent="submit" @click="someAction()">Request pro bono assistance</button>
+<div class="alertMessage" v-if="messageForm.messageStatus" v-bind:class="messageForm.messageClass">{{messageForm.messageText}}</div>
+</form>		
+
+
+
+<!--
+<form class="contact" id="contactForm">
+
+
+ 
+  <label for="phone" class="text-field">Phone no.</label>
+  <input type="text" id="phone" name="phone" placeholder="+44 7685 378405" />
+  <label for="projectType" class="text-field">Project disciplines</label>
+  <ul name="projectType" class="inputlist">
+    <li>
+      <input id="brand" type="checkbox" />
+      <label for="brand">Brand</label>
+    </li>
+    <li>
+      <input id="ui-ux" type="checkbox" />
+      <label for="ui-ux">UI/UX</label>
+    </li>
+    <li>
+      <input id="print" type="checkbox" />
+      <label for="print">Print</label>
+    </li>
+    <li>
+      <input id="front-end" type="checkbox" />
+      <label for="front-end">Front end coding</label>
+    </li>
+    <li>
+      <input id="illustration" type="checkbox" />
+      <label for="illustration">Illustration</label>
+    </li>
+    <li>
+      <input id="icons" type="checkbox" />
+      <label for="icons">Iconography</label>
+    </li>
+  </ul>
+
+  <label for="projectType" class="text-field">Project deadline</label>
+  <ul name="projectType" class="inputlist">
+    <li>
+      <input id="this-week" type="checkbox" />
+      <label for="this-week">This week</label>
+    </li>
+    <li>
+      <input id="next-week" type="checkbox" />
+      <label for="next-week">Next week</label>
+    </li>
+    <li>
+      <input id="next-month" type="checkbox" />
+      <label for="next-month">Next month</label>
+    </li>
+    <li>
+      <input id="this-year" type="checkbox" />
+      <label for="this-year">This year</label>
+    </li>
+    <li>
+      <input id="next-year" type="checkbox" />
+      <label for="next-year">This year</label>
+    </li>
+  </ul>
+
+
+  <label for="comment" class="text-field">Comment</label>
+  <textarea id="comment" name="comment" placeholder="We are looking to..."></textarea>
+
+
+</form>
+-->
+
+
+
+
+</div>
+<!-- end .content -->
+
+
+
+
+
+
+
+
+<!--
+  <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="vet_remember" v-model="referalForm.fieldContent.vet_remember" id="vetRemeber02" value="no">
+      <label class="form-check-label" for="vetRemeber02">No</label>
+  </div>
+
+  <label for="validationServer01" class="form-label">Title *</label>
+  <input type="text" class="form-control" name="client_title" placeholder="Title" value=""											
+      v-model="referalForm.fieldContent.client_title" 
+      v-bind:class="{'form-control':true, 'is-invalid' : !validateText(referalForm.fieldContent.client_title,'client_title') && referalForm.fieldStatus.client_title.blurred}" 
+      v-on:blur="referalForm.fieldStatus.client_title.blurred = true">
+
+  <label for="validationServer02" class="form-label">First name *</label>
+  <input type="text" class="form-control" name="client_firstname" placeholder="First name" value=""											
+      v-model="referalForm.fieldContent.client_firstname" 
+      v-bind:class="{'form-control':true, 'is-invalid' : !validateText(referalForm.fieldContent.client_firstname,'client_firstname') && referalForm.fieldStatus.client_firstname.blurred}" 
+      v-on:blur="referalForm.fieldStatus.client_firstname.blurred = true">
+
+  <label for="validationServer02" class="form-label">Last name *</label>
+  <input type="text" class="form-control" name="client_lastname" placeholder="Last name" value=""											
+      v-model="referalForm.fieldContent.client_lastname" 
+      v-bind:class="{'form-control':true, 'is-invalid' : !validateText(referalForm.fieldContent.client_lastname,'client_lastname') && referalForm.fieldStatus.client_lastname.blurred}" 
+      v-on:blur="referalForm.fieldStatus.client_lastname.blurred = true">
+
+  <label for="validationServer02" class="form-label">Best contact no. *</label>
+  <input type="text" class="form-control" name="client_phone" placeholder="Best contact no." value=""											
+      v-model="referalForm.fieldContent.client_phone" 
+      v-bind:class="{'form-control':true, 'is-invalid' : !validateText(referalForm.fieldContent.client_phone,'client_phone') && referalForm.fieldStatus.client_phone.blurred}" 
+      v-on:blur="referalForm.fieldStatus.client_phone.blurred = true">
+
+  <label for="validationServer01" class="form-label">Name *</label>
+  <input type="text" class="form-control" name="patient_name" placeholder="Patient's name" value=""											
+      v-model="referalForm.fieldContent.patient_name" 
+      v-bind:class="{'form-control':true, 'is-invalid' : !validateText(referalForm.fieldContent.patient_name,'patient_name') && referalForm.fieldStatus.patient_name.blurred}" 
+      v-on:blur="referalForm.fieldStatus.patient_name.blurred = true">
+
+  <label for="validationServer02" class="form-label">Species *</label>
+  <input type="text" class="form-control" name="patient_species" placeholder="Species" value=""											
+      v-model="referalForm.fieldContent.patient_species" 
+      v-bind:class="{'form-control':true, 'is-invalid' : !validateText(referalForm.fieldContent.patient_species,'patient_species') && referalForm.fieldStatus.patient_species.blurred}" 
+      v-on:blur="referalForm.fieldStatus.patient_species.blurred = true">
+
+  <label for="validationServer02" class="form-label">Current age *</label>
+  <input type="text" class="form-control" name="patient_age" placeholder="Current age" value=""											
+      v-model="referalForm.fieldContent.patient_age" 
+      v-bind:class="{'form-control':true, 'is-invalid' : !validateText(referalForm.fieldContent.patient_age,'patient_age') && referalForm.fieldStatus.patient_age.blurred}" 
+      v-on:blur="referalForm.fieldStatus.patient_age.blurred = true">
+
+  <label for="validationServer02" class="form-label">Gender & neutering status *</label>
+  <input type="text" class="form-control" name="patient_gender" placeholder="Gender & neutering status" value=""
+      v-model="referalForm.fieldContent.patient_gender" 
+      v-bind:class="{'form-control':true, 'is-invalid' : !validateText(referalForm.fieldContent.patient_gender,'patient_gender') && referalForm.fieldStatus.patient_gender.blurred}" 
+      v-on:blur="referalForm.fieldStatus.patient_gender.blurred = true">
+
+  <label for="validationServer02" class="form-label">Is the patient fit for travel?</label><br>
+  <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="patient_travel" v-model="referalForm.fieldContent.patient_travel" value="yes" checked>
+      <label class="form-check-label" for="travelFit1">Yes</label>
+  </div>
+  <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="patient_travel" v-model="referalForm.fieldContent.patient_travel" value="no">
+      <label class="form-check-label" for="travelFit2">No</label>
+  </div>
+
+  <label for="validationServer02" class="form-label">Insured?</label><br>
+  <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="patient_insured" v-model="referalForm.fieldContent.patient_insured" id="insuredRadio1" value="yes" checked>
+      <label class="form-check-label" for="insuredRadio1">Yes</label>
+  </div>
+  <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="patient_insured" v-model="referalForm.fieldContent.patient_insured" id="insuredRadio2" value="no">
+      <label class="form-check-label" for="insuredRadio2">No</label>
+  </div>
+
+  <label for="exampleFormControlTextarea1" class="form-label">Patient cautions, behavioural handling notes</label>
+  <textarea class="form-control" name="patient_notes" v-model="referalForm.fieldContent.patient_notes" rows="3"></textarea>
+
+  <label for="exampleFormControlTextarea1" class="form-label">Reason for referral</label>
+  <textarea class="form-control" name="patient_reason" v-model="referalForm.fieldContent.patient_reason" rows="3"></textarea>
+-->
+
+
+    </div><a href="#" class="vanillatop"></a>
+    <!-- end .wrapper -->
+    <p>&nbsp;</p>
+    <footer>
+      <div class="footerBut"><a href="about.html" class="gen-btn">Get in touch</a></div>
+      <ul>
+        <li class="social tw"><a href="http://twitter.com/visualengineer" aria-label="Visit Twitter" target="_blank" rel="me"></a></li>
+        <li class="social li"><a href="https://uk.linkedin.com/in/jamesgarnham" aria-label="Visit Linked In" target="_blank" rel="me"></a></li>
+        <li class="social in"><a href="https://www.instagram.com/jamesgarnhamdesign" aria-label="Visit Instagram" target="_blank" rel="me"></a></li>
+        <li class="social pi"><a href="https://www.pinterest.co.uk/visualengineer/" aria-label="Visit Pinterest" target="_blank" rel="me"></a></li>
+      </ul>
+      <div class="container">
+            <input type="checkbox" onchange="toggleTheme()" id="slider" class="switch" aria-label="Theme colour switcher" />
+      </div>
+      <div class="footerText">
+        <span class="footLeft">&copy; 2024 <a href="/old/">James Garnham</a></span><span class="footRight">Yep, I coded this.</span>
+      </div>
+
+    </footer>
+    <script src="js/main.min.js" nonce="rAnd0mNo"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js" nonce="rAnd0mNo" ></script>
+    <!--<script src="js/vue.min.js"></script>-->
+    <script defer src="js/vue_referral.min.js" nonce="rAnd0mNo"></script>
+  </body>
+</html>
